@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0145)https://s0.2mdn.net/ads/richmedia/studio/pv2/60820538/20190625024534303/index.html?e=69&leftOffset=0&topOffset=0&c=mq7jxL3jnD&t=1&renderingType=2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>300x250</title>
+    <link rel="stylesheet" type="text/css" href="./css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./Enabler_01_236.js.download"></script>
+</head>
+<body>
+     <a id="click" href="https://s0.2mdn.net/ads/richmedia/studio/pv2/60820538/20190625024534303/index.html?e=69&amp;leftOffset=0&amp;topOffset=0&amp;c=mq7jxL3jnD&amp;t=1&amp;renderingType=2#">
+        <div class="frame" id="everyting">
+           <div id="frame"> </div>
+           
+            <div id="titles">
+                <div id="TitleCenter">
+                	<h1 id="title1">Lån op til 350.000 kr.</h1>
+                </div>
+
+                <div id="TitleCenter2">
+                	<h3 id="title2" class="hidden" style="display: none;">Lån&nbsp;sikkert og nemt&nbsp;hos Santander </h3>
+                </div>
+
+                <div id="TitleCenter3">
+                    <h3 id="title3" style="display: block;">Ansøg med NemID og få svar med det samme</h3>
+                </div>
+            </div>
+           
+                <div id="blackGrad"> </div>
+                <img id="backgroundImage" width="300" height="200" src="./37071017_20181009062430500_ferie-15-300x250.jpg">
+           
+            <div class="legal_text">
+            	<p id="Legal_text_p"></p>
+            </div>
+
+            <div class="ButtonCTA">
+                 <div id="button_draw">
+                      <p id="Buy_Button_Text">Ansøg</p>
+                 </div>
+            </div>
+
+          <div class="logo">
+          		<img id="logo" src="./logo_white.png">
+          </div>
+            
+        </div>
+    </a>
+     <script src="./jquery.min.js.download"></script>
+    <script type="text/javascript" charset="utf-8">
+$('#title2').delay(500).fadeIn(1500).removeClass('hidden');
+$('#title2').delay(1500).fadeOut(800).addClass('hidden');
+$('#title3').delay( 3500 ).fadeIn(2000).removeClass('hidden');
+
+if (Enabler.isInitialized()) {
+     enablerInitHandler();
+ } else {
+     Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+ };
+
+ function enablerInitHandler() {
+
+       Enabler.setProfileId(10155049);
+    var devDynamicContent = {};
+
+    devDynamicContent.Santader_DCO_2_Remarketing_values_master_sheet= [{}];
+    devDynamicContent.Santader_DCO_2_Remarketing_values_master_sheet[0]._id = 0;
+    devDynamicContent.Santader_DCO_2_Remarketing_values_master_sheet[0].Cathegory = "Bil og Fritid-opret nyt lan";
+    devDynamicContent.Santader_DCO_2_Banner_texts= [{}];
+    devDynamicContent.Santader_DCO_2_Banner_texts[0]._id = 0;
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].Main_title = "Lan 10000 - 100000 kr";
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].Tekst = " I dag svir fa og Santander hos ansog NemID med nemt og sikkert lan";
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].Tekst_2 = "L\u00E5n sikkert og nemt med NemID. Ans\u00F8g hos santander og f\u00E5 svar i dag.";
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].CTA = "Ansog i dag";
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].Legal_text = "Den angivne rentesats er vores laveste debdorente for det pagaldende lanebelob";
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].EXIT_URL = {};
+    devDynamicContent.Santader_DCO_2_Banner_texts[0].EXIT_URL.Url = "https://santanderconsumer.dk/";
+    devDynamicContent.Santader_DCO_2_Images= [{}];
+    devDynamicContent.Santader_DCO_2_Images[0]._id = 0;
+    devDynamicContent.Santader_DCO_2_Images[0].Image_path = {};
+    devDynamicContent.Santader_DCO_2_Images[0].Image_path.Type = "file";
+    devDynamicContent.Santader_DCO_2_Images[0].Image_path.Url = "https://s0.2mdn.net/ads/richmedia/studio/37071017/37071017_20180822012953943_rhone-702757-unsplash.jpg";
+    Enabler.setDevDynamicContent(devDynamicContent);
+
+
+    document.getElementById("title1").innerHTML = dynamicContent.Santader_DCO_2_Banner_texts[0].Main_title;
+    document.getElementById("title2").innerHTML = dynamicContent.Santader_DCO_2_Banner_texts[0].Tekst;
+    document.getElementById("title3").innerHTML = dynamicContent.Santader_DCO_2_Banner_texts[0].Tekst_2;
+    document.getElementById("Buy_Button_Text").innerHTML = dynamicContent.Santader_DCO_2_Banner_texts[0].CTA;
+    document.getElementById("Legal_text_p").innerHTML = dynamicContent.Santader_DCO_2_Banner_texts[0].Legal_text;
+     document.getElementById("backgroundImage").src = dynamicContent.Santader_DCO_2_Images[0].Image_path.Url;
+
+ }
+
+ //When clickin on the banner
+ //Will be redirected to the landing page
+ function ctaHandlerNew() {
+     Enabler.exitOverride("Background Exit",
+         dynamicContent.Santader_DCO_2_Banner_texts[0].EXIT_URL.Url);
+ }
+ document.getElementById('everyting').addEventListener('click', ctaHandler);
+
+ function ctaHandler() {
+     Enabler.exitOverride("Background Exit",
+         dynamicContent.Santader_DCO_2_Banner_texts[0].EXIT_URL.Url);
+ }
+
+ function fullBannerClick() {
+     Enabler.exitOverride("Background Exit",
+         dynamicContent.Santader_DCO_2_Banner_texts[0].EXIT_URL.Url);
+ }
+         
+      </script>
+    
+
+
+</body></html>

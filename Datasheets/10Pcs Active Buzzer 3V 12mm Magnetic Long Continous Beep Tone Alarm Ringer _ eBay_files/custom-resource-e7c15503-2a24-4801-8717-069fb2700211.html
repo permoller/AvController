@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- saved from url=(0111)https://cdn.bannerflow.com/resources/custom-resource-e7c15503-2a24-4801-8717-069fb2700211?cb=636929983683278177 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>Widget asset</title>  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style type="text/css"> html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; image-rendering: optimizeQuality;}/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}body, html{background-color: transparent; overflow: hidden;}html{height: 100%; width: 100%;}body{line-height: 1; height: 100%; width: 100%;}ol, ul{list-style: none;}blockquote, q{quotes: none;}blockquote:before, blockquote:after, q:before, q:after{content: ''; content: none;}table{border-collapse: collapse; border-spacing: 0;}</style><script type="text/javascript">var console,BannerFlowAPIConnection,BannerFlow;void 0!==console&&void 0!==console.log||(console={log:function(){}}),console.warn=console.warn||console.log,console.error=console.error||console.log;try{document.domain.match(/(pro\.|sandbox\.|sandbox\-app\.|app\.|localhost)/)||(document.domain=document.domain.substring(document.domain.indexOf(".")+1))}catch(e){}function windowLoaded(e){e&&window.removeEventListener("load",windowLoaded),BannerFlow.sendMessage("loaded")}String.prototype.capitalize=function(){return this.charAt(0).toUpperCase()+this.slice(1)},BannerFlow=new(BannerFlowAPIConnection=function(i){var o=this;function a(){var e,t;null!=o.duration&&null!=o.startingPosition&&(o.imageGeneratorMode?o.dispatchEvent(o.START_ANIMATION):i.stopAnimation||(i.startTimestamp=Date.now(),1e3*(e=o.startingPosition-(i.seekOffset||0))>=i.playDelay&&!i.startAnimation?i.startAnimation=setTimeout(function(){i.startAnimation=null,o.dispatchEvent(o.START_ANIMATION)},1e3*e-i.playDelay):e<=0&&!i.startAnimation&&o.dispatchEvent(o.START_ANIMATION),1e3*(e+o.duration)>=i.playDelay&&!i.stopAnimation&&(t=1e3*(e+o.duration)-i.playDelay-50,i.stopAnimation=new r({duration:t,callbackOnComplete:!0},function(){n()}))))}function n(){i.stopAnimation&&(i.stopAnimation.stop(),i.stopAnimation=null,o.dispatchEvent(o.STOP_ANIMATION))}function s(){i.startAnimation&&(clearTimeout(i.startAnimation),i.startAnimation=null),i.stopAnimation&&(i.stopAnimation.stop(),i.stopAnimation=null)}function r(t,n){var a,o,e,s;function i(e){t.callbackOnComplete||n(),s=o(i),Date.now()-a>=t.duration&&(t.callbackOnComplete&&n(),r())}function r(){e(s)}function l(){a=Date.now(),i()}n||(n=t),o=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},e=window.cancelAnimationFrame||window.mozCancelAnimationFrame||function(e){window.clearTimeout(e)},t.waitForStart||l(),this.stop=r,this.start=l}(i=i||{})._listeners=[],i.prefix=["webkit","moz","MS","o",""],o.lastText="",o.TEXT_CHANGED=o.TEXT_UPDATED="text_changed",o.FEED_CHANGED=o.FEED_UPDATED="feed_changed",o.LOOP="loop",o.STYLE_CHANGED="style_changed",o.SETTINGS_CHANGED="settings_changed",o.RESIZE="resize",o.START_ANIMATION="start_animation",o.STOP_ANIMATION="stop_animation",o.TEXTS_RECEIVED="texts_received",o.MOUSE_MOVE="mousemove",o.MOUSE_DOWN="mousedown",o.MOUSE_UP="mouseup",o.CLICK="click",o.INIT="init",o.PLAY="play",o.PAUSE="pause",o.STOP="stop",o.BEFORE_SEEK="before_seek",o.texts={},o.text="",o.parameters={},o.settings={},o.editorMode=!1,o.imageGeneratorMode=!1,o.imageGeneratorPosition=0,o.x=0,o.y=0,o.defaultTargetUrl="",o.initTime=Date.now(),o.bannerDuration=0,o.elementId=null,o.setText=function(e){o.text!==e&&(o.text=e||"","string"!=typeof o.text&&(o.text=""),o.lastText=o.text,o.dispatchEvent(o.TEXT_CHANGED,{text:o.text}))},o.setUrl=function(e){e&&(o.targetUrl=e)},o.loopChanged=function(e){i.loop=parseInt(e.loop)||0,i.seekOffset=e.seekOffset||0,n(),o.dispatchEvent(o.LOOP,{loop:i.loop}),i.playDelay=0,s(),a()},o.setStyle=function(e){e&&(o.style=e,o.duration=parseFloat(o.getStyle("duration")),o.startingPosition=parseFloat(o.getStyle("starting-position")),o.x=parseFloat(o.getStyle("left")||0),o.y=parseFloat(o.getStyle("top")||0),o.dispatchEvent(o.STYLE_CHANGED))},o.setSettings=function(e){e&&(o.settings=e,o.dispatchEvent(o.SETTINGS_CHANGED))},o.getText=function(){return o.text||""},o.getFeed=function(){return o.feed},o.getWidth=function(){try{return parseInt(o.style.parentStyle.width.replace("px",""))}catch(e){}return window.innerWidth},o.getHeight=function(){try{return parseInt(o.style.parentStyle.height.replace("px",""))}catch(e){}return window.innerHeight},o.getStyle=function(e,t){var n,a;if(e=e.replace(/-/g,"").toLowerCase(),o.style){for(a=0;a<i.prefix.length;a++)if((n=""!==i.prefix[a]?o.style[i.prefix[a]+e.capitalize()]:o.style[e])&&""!=n)return n;if(o.style.parentStyle)for(a=0;a<i.prefix.length;a++)if((n=""!==i.prefix[a]?o.style.parentStyle[i.prefix[a]+e.capitalize()]:o.style.parentStyle[e])&&""!=n)return n;if(o.style.attributes&&(n=o.style.attributes[e]||o.style.attributes["data"+e])&&""!=n)return n}return t||void 0},o.getTextByKey=function(e){return o.texts[e].value},o.setTextByKey=function(e,t){BannerFlow.sendMessage("setText",{key:e,text:t})},o.setTargetUrlByKey=function(e,t){BannerFlow.sendMessage("setTargetUrlByKey",{key:e,url:t})},o.setFeed=function(e){BannerFlow.sendMessage("setFeed",e)},o.setFeedInterval=function(e){BannerFlow.sendMessage("setFeedInterval",e)},o.pause=function(){BannerFlow.sendMessage("pause")},o.stop=function(){BannerFlow.sendMessage("stop")},o.play=function(){BannerFlow.sendMessage("play")},o.prevLoop=function(e){BannerFlow.sendMessage("prevLoop",e)},o.nextLoop=function(e){BannerFlow.sendMessage("nextLoop",e)},o.restartBanner=function(){BannerFlow.sendMessage("restartBanner")},o.restartLoop=function(){BannerFlow.sendMessage("restartLoop")},o.seek=function(e){BannerFlow.sendMessage("seek",e)},o.hideWidget=function(){BannerFlow.sendMessage("hideWidget",o.elementId)},o.showWidget=function(){BannerFlow.sendMessage("showWidget",o.elementId)},o.open=function(t,e){t=t||o.targetUrl||o.defaultTargetUrl;var n=void 0;if(e&&void 0!==e.clientX&&void 0!==e.clientY&&(n={clientX:(e.clientX||0)+(o.x||0),clientY:(e.clientY||0)+(o.y||0)}),t)try{window.parent.BF.bannerClick?window.parent.BF.bannerClick(n,t):window.parent.onBannerClick(n,t)}catch(e){console.warn("Could not track click due to XSS issues"),window.open(t,"_blank")}else console.warn("Target url not specified")},o.trackCustomEvent=function(e,t,n,a){o.sendMessage("custom_event",{name:e,id:t,label:n,value:a})},o.trackCustomProgressEvent=function(e,t,n,a){o.sendMessage("custom_progress_event",{name:e,id:t,label:n,value:a})},o.click=o.open,o.raiseEvent=function(e,t){o.sendMessage("event",{event:e,object:t})},o.addEventListener=function(e,t){i._listeners&&e&&t&&(void 0===i._listeners[e]&&(i._listeners[e]=[]),i._listeners[e].push(t))},o.removeEventListener=function(e,t){var n,a,o;if(i._listeners[e]instanceof Array)for(a=0,o=(n=i._listeners[e]).length;a<o;a++)if(n[a]===t){n.splice(a,1);break}},o.dispatchEvent=function(t,e){var n,a,o,s;if(!t)throw new Error("Event object missing type property.");try{n=new Event(t)}catch(e){(n=document.createEvent("Event")).initEvent(t,!0,!1)}if(n.data=e,i._listeners[n.type]instanceof Array)for(o=0,s=(a=i._listeners[n.type]).length;o<s;o++)a[o].call(i,n,e)},o.sendMessage=function(e,t){parent.postMessage({type:e,url:window.location.href,data:t},"*")},window.addEventListener("resize",function(e){o.dispatchEvent("resize")}),window.addEventListener("message",function(e){var t=null!=e.data.value?e.data.value:{},n=e.data.type;switch(n){case"set_text":e.data.key&&(o.key=e.data.key),e.data.feedIndex&&(o.feedIndex=e.data.feedIndex),o.setText(t),o.setUrl(e.data.url);break;case"set_feed":o.feed=JSON.parse(JSON.stringify(t)),o.dispatchEvent(o.FEED_CHANGED,{feed:o.feed});break;case"init":o.parameters=t.parameters?t.parameters:{},o.texts=t.texts,o.bannerDuration=parseFloat(t.duration/1e3),o.elementId=t.elementId,t.size&&(o.bannerWidth=t.size.width,o.bannerHeight=t.size.height),t.key&&(o.key=t.key),t.feedIndex&&(o.feedIndex=t.feedIndex),(t.defaultTargetUrl||t.target)&&(o.defaultTargetUrl=t.defaultTargetUrl||t.target),t.parameters&&(o.parameters=t.parameters),t.isFallback&&(o.imageGeneratorMode=!0),t.fallbackPosition&&(o.imageGeneratorPosition=parseFloat(t.fallbackPosition)),t.isEditor&&(o.editorMode=!0),t.languageCulture&&(o.languageCulture=t.languageCulture),t.cultureName&&(o.cultureName=t.cultureName),o.setStyle(t.style),o.setSettings(t.settings),o.setText(t.text),o.setUrl(t.targetUrl),t.feed&&(o.feed=JSON.parse(JSON.stringify(t.feed)),o.dispatchEvent(o.FEED_CHANGED,{feed:o.feed})),o.dispatchEvent(o.TEXTS_RECEIVED),o.dispatchEvent(o.INIT);break;case"is_loaded":windowLoaded();break;case"new_loop":o.loopChanged(t);break;case"set_style":o.setStyle(t);break;case"set_settings":o.setSettings(t);break;case"event":o.dispatchEvent(t.event,t.object);break;case o.MOUSE_MOVE:case o.MOUSE_DOWN:case o.MOUSE_UP:case o.CLICK:BannerFlow.mouseX=t.x,BannerFlow.mouseY=t.y,o.dispatchEvent(n,t);break;case o.PLAY:a(),o.dispatchEvent(n,t);break;case o.PAUSE:i.startTimestamp&&(i.playDelay+=Date.now()-i.startTimestamp,i.startTimestamp=void 0),setTimeout(function(){s()}),o.dispatchEvent(n,t);break;case o.STOP:case o.BEFORE_SEEK:s(),o.dispatchEvent(n,t)}})})({}),window.addEventListener("load",windowLoaded);
+//# sourceMappingURL=widget.min.js.map
+</script><style>
+
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  padding: 0;
+  margin: 0;
+
+  pointer-events: none;
+}
+.widget-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}</style></head><body><div id="widgetContainer" class="widget-container">
+<canvas id="canvas" class="canvas" width="147" height="43" style="border-radius: 44px;"></canvas>
+</div><script>var isIE = msieversion();
+
+function msieversion() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+        return true;
+    }
+    else  // If another browser, return 0
+    {
+        return false;
+    }
+}
+
+function get(el) {
+    if(typeof el === "string") 
+        return document.getElementById(el);
+    return el;
+}
+
+var rand = function(max, min, _int) {
+    var max = (max === 0 || max)?max:1, 
+        min = min || 0, 
+        gen = min + (max - min)*Math.random();
+
+    return (_int)?Math.round(gen):gen;
+};
+
+
+/*============================================*/
+
+var ShineEffect = (function(){
+
+    var container = get('widgetContainer');
+    var canvas = get('canvas');
+    var ctx = canvas.getContext('2d');
+
+    var containerWidth, containerHeight;
+
+    var isRunning = false;
+    var isStop = false;
+    var gradient;
+    var skew, maxSkew = 0.5; // maxSkew is skew of 30 degree - skew will be used to calculate of rotating angle ( = Math.atag(skewValue))6
+    var startX, deltaX, currentX, endX, timeoutValue, timeout;
+    var startColor, centerColor;
+
+    /*--- settings from banner flow ---*/
+    var duration;
+    var size;
+    var color;
+    var isRepeat;
+    var delayRepeat;
+    var directionFrom;
+    var directionSkew;
+    var angleRotate;
+    var radius;
+
+    var stopWhenDone = false;
+
+    function runAnimation() {
+
+        if(isStop){
+            isRunning = false;
+            if(timeout)
+                clearTimeout(timeout);
+            return;
+        }
+
+        canvas.style.borderRadius = radius+'px';
+        ctx.save();
+        ctx.clearRect(0,0, containerWidth, containerHeight);
+        ctx.translate(containerWidth/2, containerHeight/2);
+        ctx.transform(1, 0, skew, 1, 0, 0);
+
+        gradient = ctx.createLinearGradient(currentX, 0, currentX + size, 0);
+        gradient.addColorStop(0, startColor);
+        gradient.addColorStop(0.5, centerColor);
+        gradient.addColorStop(1, startColor);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(currentX, -containerHeight/2, size, containerHeight);
+        ctx.restore();
+
+        if((currentX > endX && directionSkew == -1) || (currentX < endX && directionSkew == 1)) {
+            if(isRepeat && !stopWhenDone){
+                currentX = startX;
+
+                if(delayRepeat) {
+                    timeout = setTimeout(function(){
+                        if(timeout)
+                            clearTimeout(timeout);
+
+                        runAnimation();
+                    }, delayRepeat * 1000);
+
+                    return false;
+                }
+            }
+            else {
+                isRunning = false;
+                return false;
+            }
+        }
+
+        currentX += deltaX;
+
+        timeout = setTimeout(function(){
+            if(timeout)
+                clearTimeout(timeout);
+
+            runAnimation();
+        }, timeoutValue);
+
+    }
+
+    function startWidget(currentSesssion) {
+
+        if(!containerWidth || !containerHeight) // check if the widget is hide
+            return;
+
+        canvas.setAttribute('width', containerWidth);
+        canvas.setAttribute('height',  containerHeight);
+
+        // Calculate color gradient
+        color = color.substring('rgba('.length);
+        color = color.split(',');
+        startColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ", 0)";
+        centerColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ", 0.7)";
+
+        // Calculate skew value
+        // skew = containerWidth/containerHeight;
+        // if(skew > maxSkew)
+        //   skew = maxSkew;
+
+        skew = Math.tan(Math.PI * angleRotate / 180); // get rotate angle from the setting parameter
+
+        // Calculate startX to draw, endX and timeout value
+
+        if(directionFrom.toLowerCase() == "left") {
+            startX = -(size + containerWidth/2) - skew*containerHeight/2;
+            endX = containerWidth/2 + skew*containerHeight/2;
+            if(skew < 0) {
+                startX = -(size + containerWidth/2) + skew * containerHeight /2;
+                endX = containerWidth/2 - skew * containerHeight /2;
+            }
+
+            directionSkew = -1;
+
+        } else if(directionFrom.toLowerCase() == "right") {
+
+            startX = containerWidth/2 + skew*containerHeight/2;
+            endX = -(size + containerWidth/2) - skew*containerHeight/2;
+            if(skew < 0) {
+                startX = containerWidth/2 - skew*containerHeight/2;
+                endX = -(size + containerWidth/2) + skew*containerHeight/2;
+            }
+
+            directionSkew = 1;
+
+        }
+
+        duration *= 1000/2;
+        timeoutValue = parseInt(1000/60);
+        deltaX = (endX - startX)/(duration/timeoutValue);
+        currentX = startX;
+
+        // Run animation
+        isRunning = true;
+
+        runAnimation();
+
+    }
+
+
+    /*==============================================*/
+    /*===== Start point of animation  =====*/
+    /*==============================================*/
+
+    function reloadGlobalVariables() {
+
+        containerWidth = parseInt(window.getComputedStyle(container).getPropertyValue('width'));
+        containerHeight = parseInt(window.getComputedStyle(container).getPropertyValue('height'));
+
+    }
+
+    function stopCurrentAnimation(callback) {
+
+        isStop = true;
+
+        if(isRunning) {
+            var timeout = setTimeout(function(){
+                clearTimeout(timeout);
+                stopCurrentAnimation(callback);
+            }, 200);
+        } else {
+            isStop = false;
+            if(callback)
+                callback();
+        }
+
+    }
+
+    BannerFlow.addEventListener(BannerFlow.STOP, function(){
+        stopWhenDone = true;
+    })
+
+    function startAnimation(currentSesssion) {
+        stopCurrentAnimation(function(){
+            startWidget(currentSesssion);
+        });
+    }
+
+    /*==============================================*/
+    /*===== Default settings from Banner Flow  =====*/
+    /*==============================================*/
+
+    function loadSettings() {
+
+        if(typeof BannerFlow !== "undefined") {
+            radius = BannerFlow.settings.borderRadius;
+            size = BannerFlow.settings.size;
+            color = BannerFlow.settings.color;
+            duration = BannerFlow.settings.duration;
+            if(duration == 0)
+                duration = 1;
+            isRepeat = BannerFlow.settings.isRepeat;
+            delayRepeat = BannerFlow.settings.delayRepeat;
+            directionFrom = BannerFlow.settings.directionFrom;
+            angleRotate = parseInt(BannerFlow.settings.angleRotate);
+            var angleRotateWith90 = parseInt(angleRotate / 90);
+            if(angleRotate % 90 == 0 && angleRotateWith90 % 2 != 0)
+                angleRotate = 0;
+
+        } else {
+
+            size = 80;
+            color = "rgba(255,255,255,1)";
+            duration = 10;
+            isRepeat = true;
+            delayRepeat = 1;
+            directionFrom = "left";
+            angleRotate = 30;
+
+            var angleRotateWith90 = parseInt(angleRotate / 90);
+
+            if(angleRotate % 90 == 0 && angleRotateWith90 % 2 != 0)
+                angleRotate = 0;
+
+        }
+    }
+
+    /*====================================================*/  
+
+    var timeoutStart;
+    var sessionId = 0;
+
+    function init() {
+        if(timeoutStart) {
+            clearTimeout(timeoutStart);
+
+            timeoutStart = setTimeout(function() {
+                loadSettings();
+                reloadGlobalVariables();
+                startAnimation(++sessionId);
+            }, 500);
+        } else {
+            timeoutStart = setTimeout(function(){
+                loadSettings();
+                reloadGlobalVariables();
+                startAnimation(++sessionId);
+            }, 0);
+        }
+    }
+
+
+    var isStartAnimation = false;
+
+    function onStart() {
+        init();
+    }
+
+    function onTextChanged() {
+        if(typeof BannerFlow != "undefined" && !BannerFlow.editorMode) {
+            return;
+        }
+
+        init();
+    }
+
+    function onResize(){
+        if(typeof BannerFlow != "undefined" && !BannerFlow.editorMode) {
+            return;
+        }
+
+        init();
+    }
+
+    function resetParameter(){
+
+        if(typeof BannerFlow != "undefined" && !BannerFlow.editorMode) {
+            return;
+        }
+
+        init();
+    }
+
+    function onStartAnimation() {
+
+        if(typeof BannerFlow != "undefined" && !BannerFlow.editorMode && isStartAnimation) {
+            return;
+        }
+
+        isStartAnimation = true;
+        init();
+    }
+
+    function getLanguageText() {
+
+        languageTexts = [];
+
+        var tmpText = "";
+
+        if(typeof BannerFlow !== "undefined")
+            tmpText = BannerFlow.text;
+
+        if(tmpText && tmpText.length > 0) {
+            languageTexts = tmpText.split(':');
+        }
+    }
+
+    return {
+        start: onStart,
+
+        onTextChanged: onTextChanged,
+
+        onResized: onResize,
+
+        onSettingChanged: resetParameter,
+
+        onStartAnimation: onStartAnimation
+    };
+})();
+
+if(typeof BannerFlow == "undefined"){
+    ShineEffect.start();
+} else {
+
+    BannerFlow.addEventListener(BannerFlow.CLICK, function () {
+        if(isIE) {
+            BannerFlow.open();
+        }
+    });
+
+    BannerFlow.addEventListener(BannerFlow.RESIZE, function () {
+        ShineEffect.onResized();
+    });
+
+    BannerFlow.addEventListener(BannerFlow.SETTINGS_CHANGED, function () {
+        ShineEffect.onSettingChanged();
+    });
+
+    BannerFlow.addEventListener(BannerFlow.TEXT_CHANGED, function () {
+        ShineEffect.onTextChanged();
+    });
+    BannerFlow.addEventListener(BannerFlow.START_ANIMATION, function() {
+        ShineEffect.onStartAnimation();
+    });
+}
+
+</script></body></html>

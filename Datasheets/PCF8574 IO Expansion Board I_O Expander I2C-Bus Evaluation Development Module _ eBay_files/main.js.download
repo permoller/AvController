@@ -1,0 +1,118 @@
+var repeat = 2;
+var currentRepeat = 0;
+
+
+$( document ).ready(function() {
+	repeat -= 2;
+  setTimeout(showLogo, 10);
+
+  addHover();
+});
+
+
+// TIMELINE
+
+function showLogo() {
+	if(currentRepeat >> 0){
+		$('.logo .sub').addClass('animated fadeInUp');
+	}
+
+	$('.logo').removeClass('footer');
+	
+	$('.logo').addClass('loaded animated bounce');
+	setTimeout(logoFooter, 2000);
+	setTimeout(showTruck, 2000);
+}
+
+function logoFooter(){
+	$('.logo').addClass('footer');
+	$('.logo').removeClass('loaded animated bounce');
+
+	if(currentRepeat >> 0){
+		$('.logo .sub').removeClass('animated fadeInUp');
+	}
+
+	$('.logo .sub').addClass('animated fadeOutDown');
+	$('.gradient').removeClass('nopacity');
+}
+
+function showTruck(){
+	$('#truck').removeClass('footer');
+	$('#truck').addClass('show animated bounce');
+	setTimeout(showClock, 3000);
+}
+
+function showClock(){
+	$('#clock').removeClass('footer');
+	$('#truck').removeClass('show animated bounce');
+	$('#truck').addClass('footer');
+
+	$('#clock').addClass('show animated bounce');
+	setTimeout(showCcw, 3000);
+}
+
+function showCcw(){
+	$('#ccw').removeClass('footer');
+	$('#clock').removeClass('show animated bounce');
+	$('#clock').addClass('footer');
+
+	$('#ccw').addClass('show animated bounce');
+	setTimeout(showButton, 3000);
+}
+
+function showButton(){
+	$('#ccw').removeClass('show animated bounce');
+	$('#ccw').addClass('footer');
+
+	if(currentRepeat <= repeat){
+		currentRepeat++;
+		showLogo();
+	}else{
+		showButtonFinal();
+	}
+}
+
+function showButtonFinal(){
+	$('.cta').addClass('show animated bounce');
+	$('.image-overlay').addClass('nopacity');
+}
+
+
+
+
+// ADDINGSTUFF
+
+
+function addHover() {
+	console.log('addHover');
+
+	$('#truck .icon').hover(
+		function(){ 
+		$('#truck .wording').addClass('show');
+				},
+		function(){ 
+		$('#truck .wording').removeClass('show');
+				}
+	);
+
+		$('#clock .icon').hover(
+		function(){ 
+		$('#clock .wording').addClass('show');
+				},
+		function(){ 
+		$('#clock .wording').removeClass('show');
+				}
+	);
+
+
+			$('#ccw .icon').hover(
+		function(){ 
+		$('#ccw .wording').addClass('show');
+				},
+		function(){ 
+		$('#ccw .wording').removeClass('show');
+				}
+	);
+
+
+}

@@ -1,0 +1,194 @@
+
+// "placementId", "placementUri" and "brand" are expected to exist in window context.
+
+var clickareas = [];
+var exitLabel = 'Click on banner';
+var exitUrl = null;
+var customExitUrl = null;
+var customExitLabel = null;
+
+// Parameters
+var queries = new Object();
+window.location.search.replace(new RegExp('([^?=&]+)(=([^&]*))?', 'g'), function( $0, $1, $2, $3 ){ queries[ $1 ] = $3; });
+
+if (Enabler.isInitialized()) {
+  enablerInitHandler();
+} else {
+  Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+}
+
+function onClick(e) {
+    var targetUrl = customExitUrl || exitUrl || '';
+    window.postMessage(JSON.stringify({
+        event: 'click',
+        url: targetUrl,
+        data: { targetUrl: targetUrl, x: e.clientX, y: e.clientY},
+        params: { placement: placementId }
+    }), '*');
+
+    if (btoa(brand) == 'Y2FzdW1v' || btoa(brand) == 'dGVsaWEtZmlubGFuZA==' || btoa(brand) == 'aG0=') {
+    	// Custom exit
+		Enabler.exitOverride(exitLabel, exitUrl);
+
+    } else {
+
+    	// General exit
+    	if (customExitUrl)
+        	Enabler.exitOverride(customExitLabel, customExitUrl);
+	    else if (exitUrl)
+	        Enabler.exit(exitLabel, exitUrl);
+	    else
+	        Enabler.exit(exitLabel);
+    }
+
+}
+
+function enablerInitHandler() {
+    // Get all sheets/feeds
+    var feeds = [];
+
+    // Primary data binding
+    for (key in devDynamicContent) { // Preserve order from dev
+        switch (typeof dynamicContent[key]) {
+            case 'object':
+                feeds.push(dynamicContent[key]);
+                break;
+            
+        }
+
+    }
+
+    // Secondary - fallback
+    if (feeds.length == 0) {
+        for (key in dynamicContent) {
+            switch (typeof dynamicContent[key]) {
+                case 'object':
+                    feeds.push(dynamicContent[key]);
+                    break;
+                
+            }
+        }
+    }
+
+
+    // Find exit URL
+    for (var i=0;i<feeds.length;i++) {
+        var feed = feeds[i];
+        for (key in feed[0]) {
+            if (key.toLowerCase().indexOf('exit') != -1 || key.toLowerCase().indexOf('click_url') != -1 || key.toLowerCase().indexOf('page_url') != -1 || key.toLowerCase().indexOf('pageurl') != -1 || key.toLowerCase().indexOf('link_url') != -1 || key.toLowerCase().indexOf('linkurl') != -1) {
+	    	    if (typeof feed[0][key] === 'string') {
+			        exitUrl = feed[0][key];
+		        } else {
+			        exitUrl = feed[0][key].Url;
+		        }
+	        }
+        }
+    }
+    
+    // Add click listeners
+    initClickHandlers();
+    
+    // Retrieve DCO messages
+    var arrValues = [];
+    if (feeds.length > 0) {
+        // Iterate feeds
+        for (var i=0; i<feeds.length; i++) {
+            var feed = feeds[i];
+            var feedPrefix = '';
+            if (feeds.length > 1)
+                feedPrefix = 'Feed' + (i+1) + '.';
+            // Iterate rows in feed
+            for (var n=0; n<feed.length; n++) {
+                var row = feed[n];
+                var rowPrefix = '';
+                if (feed.length > 1)
+                    rowPrefix = 'Row' + (n+1) + '.';
+                // Iterate keys in row
+                for (key in row) {
+                	if (!/active|default|_id|reporting_label|size|exit_url|page_url|click_url/i.test(key)) {
+	                    var value = row[key];
+	                    // Support for non-string fields
+	                    if (typeof value == 'object') {
+	                        if (value['Url'])
+	                          value = value['Url'];
+	                        else {
+	                          for (fieldKey in value) {
+	                            if (typeof value[fieldKey] == 'string') {
+	                                value = value[fieldKey];
+	                            }
+	                          }
+	                        }
+	                    }
+	                    if (/<br\s*[\/]?>/i.test(value)) // <br> support
+	                        value = '<div>' + value.replace(/<br\s*[\/]?>/gi, '</div><div>') + '</div>';
+	                    var keyName = feedPrefix + rowPrefix + key.replace(' ', '_');
+	                    arrValues.push(keyName + '=' + encodeURIComponent(encodeURIComponent(value)));
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    if (queries['data'] != null) {
+        var previewData = JSON.parse(decodeURIComponent(queries['data']));
+        arrValues = [];
+        for (key in previewData) {
+            var keyName = key.replace(' ', '_');
+            var value = previewData[key];
+			if (/<br\s*[\/]?>/i.test(value)) // <br> support
+			 	value = '<div>' + value.replace(/<br\s*[\/]?>/gi, '</div><div>') + '</div>';
+			if (keyName.toLowerCase().indexOf('exit') > -1) {
+				exitUrl = value;
+			} else {
+            	arrValues.push(keyName + '=' + encodeURIComponent(encodeURIComponent(value)));
+        	}
+
+        }
+    }
+
+
+  	// Init banner (pass DCO messages)
+  	var scr = document.createElement('script');
+    var politeloading = btoa(brand) == 'Y2FzdW1v' ? 'on' : 'off';
+  	scr.src = placementUri + '?targeturl=%23&targetwindow=_self&politeloading=' + politeloading + '&container=banner&' + arrValues.join('&');
+  	document.head.appendChild(scr);
+}
+
+function initClickHandlers() {
+    clickareas = document.querySelectorAll('.clickarea');
+    if (clickareas.length > 0) {
+        for (var i=0;i<clickareas.length; i++) {
+            clickareas[i].addEventListener('click', onClick, false);
+        }
+    } else {
+        window.setTimeout(initClickHandlers, 50);
+    }
+}
+
+function setPosition(el, x, y, w, h) {
+	el.style.left = x;el.style.top = y;el.style.width = w;el.style.height = h;el.style.display = 'block';
+}
+window.addEventListener('message', function(e) {
+    if (e.data) {
+        var data = e.data;
+        if (data.type == 'bfWidgetEvent' && data.value.event == 'click_passthrough') {
+            data = JSON.parse(data.value.object);
+            setPosition(clickareas[0], '0px', '0px', data.x + 'px', '100%');
+            setPosition(clickareas[1], data.x + 'px', '0px', data.width + 'px', data.y + 'px');
+            setPosition(clickareas[2], data.x + 'px', (data.y + data.height) + 'px', data.width + 'px', '100%');
+            setPosition(clickareas[3], (data.x + data.width) + 'px', '0px', '100%', '100%');
+        };
+        if (data.type == 'bfWidgetEvent' && data.value.event == 'clickthrough_changed') {
+            data = JSON.parse(data.value.object);
+            if (!data.url) {
+            	customExitUrl = null;
+            	customExitLabel = null;
+            } else {
+            	customExitUrl = data.url;
+            	customExitLabel = data.label ? data.label : 'Custom exit';
+            }
+        }
+    };
+});

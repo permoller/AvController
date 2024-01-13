@@ -1,0 +1,330 @@
+//Caching the element IDs
+var Banner = Banner || {},
+	mainClick = document.getElementById('main-click'),
+	bannerContainer = document.getElementById('banner');
+
+Banner.init = function(adServer){
+	//Add the listeners for the clicks, and start the animation
+	addListeners(adServer);
+
+	Banner.build();
+};
+
+
+var bV = {
+	//CHANGE ON PROJECT BASIS
+	Client : "hbo",										// Change to correct Client name, used for tracking and streaming video correctly
+	Proj: "pioneer_s1",						// Change to correct Project name, used for tracking and streaming video correctly
+	// Intro : "gosta_s1_prog_980x240_v2.mp4",	// Change to correct filename, used for streaming video
+	// Video : "",	// Change to correct filename, used for streaming video
+	relMonth : 9,
+	relDate : 21,
+	relYear : 2019,
+
+	//SEMI STATIC VALUES
+	bLoops : 3, 											// How many times should the banner loop
+	iVloop : false,										// Set true if you need the intro video to loop
+	iVfreeze : false,										// Set true if you need the intro video to freeze on endframe and serve as background
+	iVpreAnim : false,									// Set true if you need the timeline to start before the end of the intro video
+	ivpreTime : 2, 										// How long the intro plays before moving to introend if above values have been set to true
+
+	//STATIC VALUES, DON'T CHANGE UNLESS INSTRUCTED TO
+	monthVar : new Date().getMonth()+1,
+	dayVar : new Date().getDate(),
+	yearVar : new Date().getFullYear(),
+	iVShldPlay : true,
+	cphdCDN : "https://da2v6aaf5i6f5.cloudfront.net/",
+	rackCDN : "https://da2v6aaf5i6f5.cloudfront.net/",
+	tMouseOver : false,									// Set true if you want the trailer to start on mouseOver (Remember events bound to Stage.mouseenter and Stage.mouseleave)
+	videoMuted : true,									// Choose whether the volume should fade up after 1 second, stay muted, or start with sound
+	videoFadeUp : true,
+	maxVolumeFade : "0.5",
+	vCloseColor : "#fff",								// Set Color of the trailer Close Button
+	uiBG : "rgba(81,81,81,0.50)",						// Set Color of the video progress bar background
+	uiPop : "#fff",									// Set Color of the video progress bar foreground
+
+	tLoop : true,											// Set true if you want the the trailer video to loop
+
+	AdformTracking : [
+// Insert correct ADF TRACKING links above, will be fired af 75% watched, Remove the entries above if your campaign isn't using video tracking
+	],
+};
+
+var ctaWatch = false ;
+
+Banner.build = function(){
+	if(((bV.dayVar>=bV.relDate && bV.monthVar>=bV.relMonth && bV.yearVar>=bV.relYear) || (bV.monthVar>bV.relMonth && bV.yearVar>=bV.relYear))) {
+	//	document.getElementById("cta-one-month").innerHTML = "<p>2 WEEK FREE TRIAL</p>";
+	}
+
+
+	if(ctaWatch) {
+		document.getElementById("cta-one-month").innerHTML = "<p>STREAM NOW</p>";
+	}
+
+	Banner.animate();
+};
+
+var timeline, ctahovertimeline, playTimeline, videoTimeline;
+
+Banner.animate = function(){
+
+	var reps = 1;
+
+	var chkReps = function(){
+		if(reps === bV.bLoops) {
+			// pause or stop
+			timeline.pause();
+		}
+	};
+
+	var loopTimeline = function(){
+		reps++;
+		//timeline.restart();
+		timeline.play("intro-start");
+	};
+
+	//TweenMax.set("#bg", {filter: "contrast(100%)"});
+
+	//var tt_paths = Array.prototype.slice.call(document.getElementById("tt").getElementsByTagName("path"));
+
+	timeline = new TimelineMax({paused:true});
+
+	CustomEase.create("hop", "M0,0.005 C0,0.005 0.056,0.445 0.175,0.445 0.294,0.445 0.332,0 0.332,0 0.332,0 0.414,1 0.671,1 0.991,1 1,0 1,0");
+
+	timeline
+		.to("#banner", 0.3, { opacity: 1, ease:Power0.easeNone})
+		.add('intro-start')
+		.from("#bg", 3, { opacity: '0', scale: "1.2", ease:Power3.easeOut}, "intro-start")
+		.from("#tt_1", 1.5, {
+			opacity: '0',
+			scale: 0.5,
+			ease:Power3.easeOut
+		}, "-=2.5")
+		.from("#tt_2", 1, {
+			opacity: '0',
+			scale: 0.5,
+			ease:Power3.easeOut
+		}, "-=1.9")
+		.from("#txt", 0.7, { opacity: '0', ease:Power3.easeOut}, "-=1.3")
+		.from("#cta", 0.7, { opacity: '0', ease:Power3.easeOut}, "-=1.1")
+		.to("#tt_1", 0.1, {
+			webkitFilter: "brightness(1.18)",
+			filter: "brightness(1.18)",
+			ease:"hop"
+		}, "+=0.1")
+		.to("#tt_1", 0.1, {
+			webkitFilter: "brightness(1.1)",
+			filter: "brightness(1.1)",
+			ease:"hop"
+		}, "-=0.25")
+		.to("#tt_1", 0.1, {
+			webkitFilter: "brightness(1.18)",
+			filter: "brightness(1.18)",
+			ease:"hop"
+		}, "+=4")
+		.to("#tt_1", 0.1, {
+			webkitFilter: "brightness(1.1)",
+			filter: "brightness(1.1)",
+			ease:"hop"
+		}, "-=0.25")
+		// .set({}, {}, "+=1")
+		.set({}, {onComplete: chkReps})
+		.set({}, {}, "+=2")
+		.add('freeze')
+		.set({}, {onComplete: loopTimeline})
+	;
+
+
+
+	ctahovertimeline = new TimelineLite();
+
+	ctahovertimeline
+		.addPause()
+		.add('hover')
+		.to("#cta-one-month", 0.5, {top: '110%', ease:Power3.easeOut})
+		.to("#cta-sign-up", 0.5, {top: '0px', ease:Power3.easeOut}, "-=0.5")
+		.to("#cta-bg", 0.5, {webkitFilter: "brightness(1.1)", filter: "brightness(1.1)", ease:Power3.easeOut}, "-=0.5")
+		.addPause()
+		.add('off')
+		.to("#cta-sign-up", 0.5, {top: '-100%', ease:Power3.easeOut})
+		.to("#cta-one-month", 0.5, {top: '0px', ease:Power3.easeOut}, "-=0.5")
+		.to("#cta-bg", 0.5, {webkitFilter: "brightness(1)", filter: "brightness(1)", ease:Power3.easeOut}, "-=0.5");
+
+	timeline.play();
+	document.getElementById('loadCurtain').style.display = "none";
+};
+
+
+mouseHandler = function(aniObj,aniEv) {
+	switch(aniEv){
+		case 'cta-hover':
+			ctahovertimeline.play("hover");
+			break;
+		case 'cta-off':
+			ctahovertimeline.play("off");
+			break;
+	}
+};
+
+function addListeners() {
+	mainClick.addEventListener('click', function() {exitHandler(adServer);}, false);
+	if(!ctaWatch) {
+		bannerContainer.addEventListener('mouseenter', function() {mouseHandler(this,"cta-hover");}, false);
+		bannerContainer.addEventListener('mouseleave', function() {mouseHandler(this,"cta-off");}, false);
+	}
+}
+
+
+function exitHandler(adServer) {
+	if(adServer==="dcm") {
+		return window.open(clickTag,'_blank');
+	}
+	if(adServer==="adform") {
+		return window.open(dhtml.getVar('clickTAG', 'http://www.example.com'), dhtml.getVar('landingPageTarget', '_blank'));
+	}
+}
+
+
+function playHit() {
+	gotoTrailer("hit");
+}
+
+
+/*********   Mobile CHECKER    *********/
+// Check if the user is on a mobile, if he is, skip the progressive video intro
+
+var iOS10plus = false;
+
+function mobChecker() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		if (/iP(hone|od|ad)/.test(navigator.platform)) {
+			var iOS = parseFloat(('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0,''])[1]) .replace('undefined', '3_2').replace('_', '.').replace('_', '')) || false;
+			if (iOS>=10) {iOS10plus = true; return false;}
+		}
+		return true;
+	}
+	return false;
+}
+
+var mobV = mobChecker();
+
+
+/*********   VIDEO INTRO    *********/
+
+// var playIntro, loadIntro, stopIntro, updateProgressIntro;
+//
+// var iV = {
+// // Don't edit past this line for the intro
+// 	iVHolder : document.getElementById('video-intro'),
+// 	iVWidth : document.getElementById('video-intro').offsetWidth,
+// 	iVHeight : document.getElementById('video-intro').offsetHeight,
+// 	iVCanPlay : false,
+// 	iVtimChk : "",
+// 	//iVShldPlay : true,
+// 	iFirst : true,
+// 	iSrc : "",
+// 	frzRdy : true,
+// };
+//
+// document.getElementById("video-intro").innerHTML = '<video id="iPlayer" style="width:'+iV.tVWidth+'px;height:'+iV.iVHeight+'px;-webkit-transition: opacity 0.6s;-moz-transition: opacity 0.6s;transition: opacity 0.6s;opacity:0;" preload="none" muted playsinline></video>';
+//
+// var iVideo = document.getElementById("iPlayer");
+//
+// iVideo.onended = function() {
+// 	if(bV.iVloop) {
+// 		iVideo.play();
+// 		return;
+// 	}
+// 	if(bV.iVShldPlay) {
+// 		if(!bV.iVpreAnim) timeline.play("intro-end");
+// 		if(!bV.iVfreeze) iVideo.style.opacity = "0";
+// 		bStatus = "def";
+// 		bV.iVShldPlay = false;
+// 		//console.log("repeat intro");
+// 	}
+// };
+//
+// iVideo.oncanplay = function() {
+// 	iV.iVCanPlay = true;
+// };
+//
+// var errorStep = 1;
+//
+// iVideo.onerror=function(e){
+// 	if(e.target.error.code===4 && errorStep===1) {
+// 		clearInterval(iV.iVtimChk);
+// 		errorStep = 2;
+// 		iV.iFirst=true;
+// 		bV.cphdCDN = bV.rackCDN;
+// 		loadIntro();
+// 	}
+// 	else {
+// 		timeline.play("intro-end");
+// 		//sym.play("introend");
+// 		mobV = true;
+// 	}
+// };
+//
+//
+// iVideo.ontimeupdate = function() {
+// 	updateProgressIntro();
+// };
+//
+//
+// playIntro = function() {
+// 	if(!mobV) {
+// 		bStatus = "intro";
+// 		iV.frzRdy = true;
+// 		loadIntro();
+// 	}
+// 	else {
+// 		timeline.play("intro-end");
+// 		//sym.play("introend");
+// 	}
+// };
+//
+//
+// loadIntro = function() {
+// 	if(iV.iFirst) {
+// 		iV.iSrc = bV.cphdCDN+bV.Client+"/"+bV.Proj+"/"+bV.Intro;
+// 		iV.iFirst=false;
+// 		iVideo.setAttribute('src', iV.iSrc);
+// 		iVideo.load();
+// 		loadIntro();
+// 	}
+// 	else {
+// 		bV.iVShldPlay = true;
+// 		iV.iVtimChk = setInterval(introCheck, 200);
+// 	}
+// };
+//
+// function introCheck() {
+// 	if(iV.iVCanPlay) {
+// 		clearInterval(iV.iVtimChk);
+// 		iVideo.currentTime = 0;
+// 		iVideo.style.opacity = "1";
+// 		iVideo.play();
+// 		document.getElementById('loadCurtain').style.display = "none";
+// 	}
+// }
+//
+// stopIntro = function() {
+// 	if(bV.iVShldPlay){
+// 		iV.frzRdy = false;
+// 		iVideo.pause();
+// 		//iVideo.currentTime = iVideo.duration;
+// 		if(!bV.iVfreeze) iVideo.style.opacity = "0";
+// 		bV.iVShldPlay = false;
+// 		timeline.play("intro-end");
+// 		bV.bLoops = 0;
+// 	}
+// };
+//
+// updateProgressIntro = function() {
+// 	//console.log(iVideo.currentTime);
+// 	if(iVideo.currentTime > bV.ivpreTime && iV.frzRdy && bV.iVpreAnim) {
+// 		iV.frzRdy = false;
+// 		timeline.play("intro-end");
+// 	}
+// };

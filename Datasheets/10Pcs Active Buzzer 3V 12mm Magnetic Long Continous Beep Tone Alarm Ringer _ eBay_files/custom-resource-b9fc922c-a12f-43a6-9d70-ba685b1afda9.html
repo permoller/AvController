@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://cdn.bannerflow.com/resources/custom-resource-b9fc922c-a12f-43a6-9d70-ba685b1afda9.html?cb=636929983683278177 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>Widget asset</title>  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style type="text/css"> html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; image-rendering: optimizeQuality;}/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}body, html{background-color: transparent; overflow: hidden;}html{height: 100%; width: 100%;}body{line-height: 1; height: 100%; width: 100%;}ol, ul{list-style: none;}blockquote, q{quotes: none;}blockquote:before, blockquote:after, q:before, q:after{content: ''; content: none;}table{border-collapse: collapse; border-spacing: 0;}</style><script type="text/javascript">var console,BannerFlowAPIConnection,BannerFlow;void 0!==console&&void 0!==console.log||(console={log:function(){}}),console.warn=console.warn||console.log,console.error=console.error||console.log;try{document.domain.match(/(pro\.|sandbox\.|sandbox\-app\.|app\.|localhost)/)||(document.domain=document.domain.substring(document.domain.indexOf(".")+1))}catch(e){}function windowLoaded(e){e&&window.removeEventListener("load",windowLoaded),BannerFlow.sendMessage("loaded")}String.prototype.capitalize=function(){return this.charAt(0).toUpperCase()+this.slice(1)},BannerFlow=new(BannerFlowAPIConnection=function(i){var o=this;function a(){var e,t;null!=o.duration&&null!=o.startingPosition&&(o.imageGeneratorMode?o.dispatchEvent(o.START_ANIMATION):i.stopAnimation||(i.startTimestamp=Date.now(),1e3*(e=o.startingPosition-(i.seekOffset||0))>=i.playDelay&&!i.startAnimation?i.startAnimation=new r({duration:1e3*e-i.playDelay,callbackOnComplete:!0},function(){i.startAnimation=null,o.dispatchEvent(o.START_ANIMATION)}):e<=0&&!i.startAnimation&&o.dispatchEvent(o.START_ANIMATION),1e3*(e+o.duration)>=i.playDelay&&!i.stopAnimation&&(t=1e3*(e+o.duration)-i.playDelay-50,i.stopAnimation=new r({duration:t,callbackOnComplete:!0},function(){n()}))))}function n(){i.stopAnimation&&(i.stopAnimation.stop(),i.stopAnimation=null,o.dispatchEvent(o.STOP_ANIMATION))}function s(){i.startAnimation&&(clearTimeout(i.startAnimation),i.startAnimation=null),i.stopAnimation&&(i.stopAnimation.stop(),i.stopAnimation=null)}function r(e,t){var n,a,o,s;function i(){e.callbackOnComplete||t(),s=a(i),Date.now()-n>=e.duration&&(e.callbackOnComplete&&t(),r())}function r(){o(s)}function l(){n=Date.now(),i()}t||(t=e),a=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){return setTimeout(e,1e3/60)},o=window.cancelAnimationFrame||window.mozCancelAnimationFrame||function(e){window.clearTimeout(e)},e.waitForStart||l(),this.stop=r,this.start=l}(i=i||{})._listeners=[],i.prefix=["webkit","moz","MS","o",""],o.lastText="",o.TEXT_CHANGED=o.TEXT_UPDATED="text_changed",o.FEED_CHANGED=o.FEED_UPDATED="feed_changed",o.LOOP="loop",o.STYLE_CHANGED="style_changed",o.SETTINGS_CHANGED="settings_changed",o.RESIZE="resize",o.START_ANIMATION="start_animation",o.STOP_ANIMATION="stop_animation",o.TEXTS_RECEIVED="texts_received",o.MOUSE_MOVE="mousemove",o.MOUSE_ENTER="mouseenter",o.MOUSE_LEAVE="mouseleave",o.MOUSE_DOWN="mousedown",o.MOUSE_UP="mouseup",o.CLICK="click",o.INIT="init",o.PLAY="play",o.PAUSE="pause",o.STOP="stop",o.BEFORE_SEEK="before_seek",o.texts={},o.text="",o.parameters={},o.settings={},o.editorMode=!1,o.imageGeneratorMode=!1,o.imageGeneratorPosition=0,o.x=0,o.y=0,o.defaultTargetUrl="",o.initTime=Date.now(),o.bannerDuration=0,o.elementId=null,o.setText=function(e){o.text!==e&&(o.text=e||"","string"!=typeof o.text&&(o.text=""),o.lastText=o.text,o.dispatchEvent(o.TEXT_CHANGED,{text:o.text}))},o.setUrl=function(e){e&&(o.targetUrl=e)},o.loopChanged=function(e){i.loop=parseInt(e.loop)||0,i.seekOffset=e.seekOffset||0,n(),o.dispatchEvent(o.LOOP,{loop:i.loop}),i.playDelay=0,s(),a()},o.setStyle=function(e){e&&(o.style=e,o.duration=parseFloat(o.getStyle("duration")),o.startingPosition=parseFloat(o.getStyle("starting-position")),o.x=parseFloat(o.getStyle("left")||0),o.y=parseFloat(o.getStyle("top")||0),o.dispatchEvent(o.STYLE_CHANGED))},o.setSettings=function(e){e&&(o.settings=e,o.dispatchEvent(o.SETTINGS_CHANGED))},o.getText=function(){return o.text||""},o.getFeed=function(){return o.feed},o.getWidth=function(){try{return parseInt(o.style.parentStyle.width.replace("px",""))}catch(e){}return window.innerWidth},o.getHeight=function(){try{return parseInt(o.style.parentStyle.height.replace("px",""))}catch(e){}return window.innerHeight},o.getStyle=function(e,t){var n,a;if(e=e.replace(/-/g,"").toLowerCase(),o.style){for(a=0;a<i.prefix.length;a++)if((n=""!==i.prefix[a]?o.style[i.prefix[a]+e.capitalize()]:o.style[e])&&""!=n)return n;if(o.style.parentStyle)for(a=0;a<i.prefix.length;a++)if((n=""!==i.prefix[a]?o.style.parentStyle[i.prefix[a]+e.capitalize()]:o.style.parentStyle[e])&&""!=n)return n;if(o.style.attributes&&(n=o.style.attributes[e]||o.style.attributes["data"+e])&&""!=n)return n}return t||void 0},o.getTextByKey=function(e){return o.texts[e].value},o.setTextByKey=function(e,t){BannerFlow.sendMessage("setText",{key:e,text:t})},o.setTargetUrlByKey=function(e,t){BannerFlow.sendMessage("setTargetUrlByKey",{key:e,url:t})},o.setFeed=function(e){BannerFlow.sendMessage("setFeed",e)},o.setFeedInterval=function(e){BannerFlow.sendMessage("setFeedInterval",e)},o.pause=function(){BannerFlow.sendMessage("pause")},o.stop=function(){BannerFlow.sendMessage("stop")},o.play=function(){BannerFlow.sendMessage("play")},o.prevLoop=function(e){BannerFlow.sendMessage("prevLoop",e)},o.nextLoop=function(e){BannerFlow.sendMessage("nextLoop",e)},o.restartBanner=function(){BannerFlow.sendMessage("restartBanner")},o.restartLoop=function(){BannerFlow.sendMessage("restartLoop")},o.seek=function(e){BannerFlow.sendMessage("seek",e)},o.hideWidget=function(){BannerFlow.sendMessage("hideWidget",o.elementId)},o.showWidget=function(){BannerFlow.sendMessage("showWidget",o.elementId)},o.open=function(t,e,n){t=t||o.targetUrl||o.defaultTargetUrl;var a=void 0;if(e&&void 0!==e.clientX&&void 0!==e.clientY&&(a={clientX:(e.clientX||0)+(o.x||0),clientY:(e.clientY||0)+(o.y||0)}),t)try{window.parent.BF.bannerClick?window.parent.BF.bannerClick(a,t,n):window.parent.onBannerClick(a,t,n)}catch(e){console.warn("Could not track click due to XSS issues"),window.open(t,"_blank")}else console.warn("Target url not specified")},o.trackCustomEvent=function(e,t,n,a){o.sendMessage("custom_event",{name:e,id:t,label:n,value:a})},o.trackCustomProgressEvent=function(e,t,n,a){o.sendMessage("custom_progress_event",{name:e,id:t,label:n,value:a})},o.click=o.open,o.raiseEvent=function(e,t){o.sendMessage("event",{event:e,object:t})},o.addEventListener=function(e,t){i._listeners&&e&&t&&(void 0===i._listeners[e]&&(i._listeners[e]=[]),i._listeners[e].push(t))},o.removeEventListener=function(e,t){var n,a,o;if(i._listeners[e]instanceof Array)for(a=0,o=(n=i._listeners[e]).length;a<o;a++)if(n[a]===t){n.splice(a,1);break}},o.dispatchEvent=function(t,e){var n,a,o,s;if(!t)throw new Error("Event object missing type property.");try{n=new Event(t)}catch(e){(n=document.createEvent("Event")).initEvent(t,!0,!1)}if(n.data=e,i._listeners[n.type]instanceof Array)for(o=0,s=(a=i._listeners[n.type]).length;o<s;o++)a[o].call(i,n,e)},o.sendMessage=function(e,t){parent.postMessage({type:e,url:window.location.href,data:t},"*")},window.addEventListener("resize",function(e){o.dispatchEvent("resize")}),window.addEventListener("message",function(e){var t=null!=e.data.value?e.data.value:{},n=e.data.type;switch(n){case"set_text":e.data.key&&(o.key=e.data.key),e.data.feedIndex&&(o.feedIndex=e.data.feedIndex),o.setText(t),o.setUrl(e.data.url);break;case"set_feed":o.feed=JSON.parse(JSON.stringify(t)),o.dispatchEvent(o.FEED_CHANGED,{feed:o.feed});break;case"init":o.parameters=t.parameters?t.parameters:{},o.texts=t.texts,o.bannerDuration=parseFloat(t.duration/1e3),o.elementId=t.elementId,t.size&&(o.bannerWidth=t.size.width,o.bannerHeight=t.size.height),t.key&&(o.key=t.key),t.feedIndex&&(o.feedIndex=t.feedIndex),(t.defaultTargetUrl||t.target)&&(o.defaultTargetUrl=t.defaultTargetUrl||t.target),t.parameters&&(o.parameters=t.parameters),t.isFallback&&(o.imageGeneratorMode=!0),t.fallbackPosition&&(o.imageGeneratorPosition=parseFloat(t.fallbackPosition)),t.isEditor&&(o.editorMode=!0),t.languageCulture&&(o.languageCulture=t.languageCulture),t.cultureName&&(o.cultureName=t.cultureName),o.setStyle(t.style),o.setSettings(t.settings),o.setText(t.text),o.setUrl(t.targetUrl),t.feed&&(o.feed=JSON.parse(JSON.stringify(t.feed)),o.dispatchEvent(o.FEED_CHANGED,{feed:o.feed})),o.dispatchEvent(o.TEXTS_RECEIVED),o.dispatchEvent(o.INIT);break;case"is_loaded":windowLoaded();break;case"new_loop":o.loopChanged(t);break;case"set_style":o.setStyle(t);break;case"set_settings":o.setSettings(t);break;case"event":o.dispatchEvent(t.event,t.object);break;case o.MOUSE_MOVE:case o.MOUSE_DOWN:case o.MOUSE_UP:case o.MOUSE_ENTER:case o.MOUSE_LEAVE:case o.CLICK:BannerFlow.mouseX=t.x,BannerFlow.mouseY=t.y,o.dispatchEvent(n,t);break;case o.PLAY:a(),o.dispatchEvent(n,t);break;case o.PAUSE:i.startTimestamp&&(i.playDelay+=Date.now()-i.startTimestamp,i.startTimestamp=void 0),setTimeout(function(){s()}),o.dispatchEvent(n,t);break;case o.STOP:case o.BEFORE_SEEK:s(),o.dispatchEvent(n,t)}})})({}),window.addEventListener("load",windowLoaded);
+//# sourceMappingURL=widget.min.js.map
+</script><style>/* Styling of the widget */</style></head><body>
+<div>
+</div><script>BannerFlow.addEventListener(BannerFlow.SETTINGS_CHANGED, init);
+
+
+function init() {
+    // Simulate dynamic parameters
+    /*BannerFlow.parameters = {
+        CTA_Text_Color: 'red',
+        CTA_Color: 'blue',
+        CTA_Color_Hover: 'black',
+        S1_Color: 'orange',
+        H2_Color: 'cyan',
+    };*/
+    
+    var mapping = {
+        CTA: {
+            textColor: 'CTA_Text_Color',
+            bgColor: 'CTA_Color',
+            bgColorHover: 'CTA_Color_Hover'
+        },
+        S1: {
+            textColor: 'S1_Color'
+        },
+        S2: {
+            textColor: 'S2_Color'
+        },
+        H1: {
+          	textColor: 'H1_Color'  
+        },
+        H2: {
+            textColor: 'H2_Color'
+        },
+        H3: {
+            textColor: 'H3_Color'
+        },
+        H4: {
+            textColor: 'H4_Color'
+        },
+        Tac: {
+            textColor: 'Tac_Color'
+        },
+        Ltac: {
+            textColor: 'Ltac_Color'
+        }
+    }
+    
+    for (var textKey in BannerFlow.texts) {
+        var val = BannerFlow.texts[textKey].value;
+        var hasDynamicMacro = val.split('#').length > 2;
+        if (hasDynamicMacro) {
+            
+            var macroName = val.split('#')[1].split(':')[0];
+            if (mapping[macroName]) {
+                var map = mapping[macroName];
+                
+                if (map.textColor && BannerFlow.parameters[map.textColor]) {
+                    setDynamicColor(textKey, 'color', BannerFlow.parameters[map.textColor]);
+                }
+                
+                if (map.bgColor && BannerFlow.parameters[map.bgColor]) {
+                    setDynamicColor(textKey, 'backgroundColor', BannerFlow.parameters[map.bgColor]);
+                }
+                
+                if (map.bgColorHover && BannerFlow.parameters[map.bgColorHover]) {
+                    setDynamicColor(textKey, 'backgroundColorHover', BannerFlow.parameters[map.bgColorHover]);
+                }
+            }
+        }
+    }
+    console.log(BannerFlow);
+}
+
+function setDynamicColor(key, property, value) {
+	// Custom Banner Script listens to this event and finds the associated DOM element and changes its style.
+    BannerFlow.raiseEvent('SET_DYNAMIC_COLOR', { key: key, property: property, value: value });
+}</script></body></html>

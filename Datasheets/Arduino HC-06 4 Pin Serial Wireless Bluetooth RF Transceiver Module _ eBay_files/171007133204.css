@@ -1,0 +1,177 @@
+/* Copyright (c) PushAuction LLC, All Rights Reserved. Used with permission by PushAuction. Original design work, including graphics and all related scripts.*/ 
+/* Template Css Create time:12/27/2017 1:26:46 PM */ 
+/* Template Service End Data: 1/1/1900 12:00:00 AM */ 
+/* Template Version: V4.0 */ 
+/* Template Name:A16256 */ 
+/* style */ 
+@import url('/lt_setting.css?20170505');
+/* template setting */ 
+
+.patemplate_content{padding:0;}
+.patemplate_contentin{padding:0;  padding-top:13px;}
+#terms input { display: none;}
+#terms label.headlabel1, #terms label.headlabel2, #terms label.headlabel3, #terms label.headlabel4, #terms label.headlabel5 { display: none; }
+#terms #patemplate_termscontent_1, 
+#terms #patemplate_termscontent_2, 
+#terms #patemplate_termscontent_3, 
+#terms #patemplate_termscontent_4{display: block; margin-bottom:10px;} 
+#terms #patemplate_termscontent_5{display: block; }
+#terms #tab1:checked ~ #patemplate_termscontent_1 .template_terms_contentin, 
+#terms #tab2:checked ~ #patemplate_termscontent_2 .template_terms_contentin, 
+#terms #tab3:checked ~ #patemplate_termscontent_3 .template_terms_contentin, 
+#terms #tab4:checked ~ #patemplate_termscontent_4 .template_terms_contentin, 
+#terms #tab5:checked ~ #patemplate_termscontent_5 .template_terms_contentin {display: block;}
+#terms .template_terms_contentin_t{display: block; width: 100%;float:left; position:relative;color:#ffffff;font-size:15;height:44px;line-height:44px!important;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/tabbg.jpg);background-repeat:repeat-xbackground-position:top left;   }
+#terms label {display: inline-block; width:100%; float:left;font-weight: 600; text-align:left;}
+#terms  label span{margin-left:10px;font-weight: 600;}
+@media(min-width:480px) and (max-width:797px) { #terms .template_terms_contentin_t{display:block}}
+@media(min-width:797px) and (max-width:1100px){ #terms .template_terms_contentin_t{display:block}}
+@media(min-width:1100px){ #terms .template_terms_contentin_t{display:block}}
+#patemplate_header_nav{display:none!important}.patemplate_slider{display:none!important}#patemplate_store_category{display:none!important}#patemplate_userlinks{display:none!important}.patemplate_center{width:1200px}
+.patemplate_headertop{position:relative;height:223px;min-height:223px;}
+.patemplate_header_logo{position:absolute; top:82px; left:8px;}
+#patemplate{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/bg.jpg);background-position-y:top;background-position-x:center;background-repeat:repeat-y; }
+.pastore_top_background{background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/store_topbg.jpg);background-position-y:top;background-position-x:center;background-repeat:no-repeat;}
+.pastore_bottom_background{background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/store_bottombg.jpg);background-position-y:bottom; background-position-x:center;background-repeat:no-repeat;}
+.pastore_header_background{height:223px;min-height:223px;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/top_banner.png);background-position-y:top;background-position-x:center;background-repeat:no-repeat;}
+.patemplate_header_logo{background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/logo.png);}
+.pastore_footer_background{height:172px;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/bottom_banner.png);background-position-y:top;background-position-x:center;background-repeat:no-repeat;  }
+.patemplate_content{  }
+.patemplate_header_nav{  }
+.patemplate_header_nav ul.lev1 ul.lev2 li a{}.patemplate_content_left .patemplatebox_h{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/category_bg.jpg);background-repeat:repeat;}
+.patemplate_content_left .patemplatebox_h{  height:44px;line-height:44px;}
+.patemplate_content_left .patemplatebox_h .patemplatebox_title{color:#ffffff;font-size:15px;height:44px;line-height:44px;}
+.patemplate_content_left .patemplatebox_bodyin{ background-color:#ffffff; background-repeat:repeat; background-position:top left; }
+.patemplate_content_left .patemplatebox_bodyin{border:1px solid #ffffff;  border-top:none;}
+.patemplate_content_left .patemplatebox_bodynone{ background-color:#ffffff; background-repeat:repeat; background-position:top left; }
+.patemplate_content_left .patemplatebox_bodynone{border:1px solid #ffffff;  border-top:none;}
+.patemplate_content_left .patemplate_category ul li a{color:#000000;}
+.patemplate_content_left .storenewsletter{background-color:#fdaf1f; }
+.patemplate_content_left .storenewsletter_txt{color:#ffffff;font-size:15px;}
+.patemplate_content_left .storenewsletter_txt:after{content:"sign up now"}
+.patemplate_content_left .savesellery_button{background-color:#2d3d57;color:#ffffff;font-size:13; }
+.patemplate_content_right .patemplatebox_h1{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/itemgallery_bg.jpg);background-repeat:repeat;background-position:top left;}
+.patemplate_content_right .patemplatebox_h1{  height:44px;line-height:44px!important;}
+.patemplate_content_right .patemplatebox_h1 .patemplatebox_title{color:#ffffff;font-size:15px;height:44px;line-height:44px!important;} 
+.patemplate_content_right .template_terms_contentin{border:1px solid  #ffffff;background-color:#ffffff;   border-top:none;}
+.patemplate_content_right .patemplatebox_bodyin{ background-color:#ffffff; background-repeat:repeat;   background-position:top left;}
+.patemplate_content_right .patemplatebox_bodyin{border:1px solid  #ffffff;  border-top:none;}
+.patemplate_content_right .patemplatebox_bodynone{background-color:#ffffff; background-repeat:repeat;   background-position:top left; }
+.patemplate_content_right .patemplatebox_bodynone{border:1px solid  #ffffff;  border-top:none;}
+.patemplate_content_right .patemplate_picbodyin{border:1px solid  #ffffff; }
+.patemplate_header_nav{ width:1200px;background-color:transparent; background-repeat:repeat;background-position:top left;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li{ text-align:leftpx;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li:hover{background-color:#fdaf1f!important;}
+.patemplate_header_nav > ul > li > a{color:#ffffff!important;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li:hover > a{color:#ffffff!important;}
+.patemplate_header_nav > ul > li > ul.lev2{background-color:transparent;top:51px;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li {background-color:transparent;color:#ffffff!important;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li:hover{background-color:#fdaf1f!important;}.patemplate_header_nav > ul > li:hover ul.lev2 li a {color:#ffffff!important;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li:hover a{color:#ffffff!important;}.pastore_footer .pastore_inside #menu ul li a  {color:#ffffff;}
+.pastore_footer .pastore_inside #menu ul li a:hover {color:#ffffff;}
+.pastore_footer .pastore_inside #copyright {color:#ffffff;}
+.pastore_footer .pastore_inside #copyright a {color:#ffffff;}
+.pastore_footer .pastore_inside .inside_right a {background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A16256/logo.png);}
+.pastore_footer .pastore_inside #copyright a:hover {color:#ffffff;}
+@media(min-width:240px) and (max-width:479px){#header{display:block;}}@media(min-width:240px) and (max-width:479px){.pictureslider{display:block!important;}}@media(min-width:240px) and (max-width:479px){#terms{display:block!important;}}@media(min-width:240px) and (max-width:479px){#pa_t_cp{display:none!important}}@media(min-width:240px) and (max-width:479px){#pa_b_cp{display:none!important}}#patemplate_template_category{display:none}
+#patemplate_header_nav{display:none}
+#patemplate_links{display:none}
+.csslider1{display: inline-block; position: relative; width: 100%;} 
+.csslider1, 
+.csslider1 *, 
+.csslider1 *:after, 
+.csslider1 *:before{-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;} 
+.csslider1 > .cs_anchor{display: none;} 
+.csslider1 > ul{position: relative; z-index: 1; font-size: 0; line-height: 0; margin: 0 auto; padding: 0; overflow: hidden; white-space: nowrap;} 
+.csslider1 > ul > .cs_skeleton{width: 100%; visibility: hidden; font-size: 0px; line-height: 0;} 
+.csslider1 > ul > .slide.img img{width: 100%;} 
+.csslider1 > ul > .slide.img a{font-size: 0pt; color: transparent;} 
+.csslider1 > ul > .slide{position: relative; display: inline-block; width: 100%; height: 100%; overflow: hidden; font-size: 15px; font-size: initial; line-height: normal; white-space: normal; vertical-align: top; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);} 
+.csslider1 .cs_engine{position: absolute; top: -9999px; left: -9999px; font-size: 0pt; opacity: 0; filter: alpha(opacity=0);} 
+.csslider1 > ul > li.img, 
+.csslider1 > .cs_arrowprev, 
+.csslider1 > .cs_arrownext, 
+.csslider1 > .cs_bullets, 
+.csslider1 > .cs_play_pause{-webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+.csslider1 > .cs_arrowprev, 
+.csslider1 > .cs_arrownext{position: absolute; top: 50%; z-index: 5; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;} 
+.csslider1 > .cs_arrowprev > label, 
+.csslider1 > .cs_arrownext > label{position: absolute; text-decoration: none; cursor: pointer; opacity: 0; z-index: -1;} 
+.csslider1 > .cs_arrowprev{left: 0;} 
+.csslider1 > .cs_arrownext{right: 0;} 
+.csslider1 > .slide:checked ~ .cs_arrowprev > label, 
+.csslider1 > .slide:checked ~ .cs_arrownext > label{opacity: 0; z-index: -1;} 
+.csslider1 > #cs_slide1_0:checked ~ .cs_arrowprev > label.num0,
+                                                    .csslider1 > #cs_pause1_0:checked ~ .cs_arrowprev > label.num0,
+                                                    .csslider1 > #cs_slide1_0:checked ~ .cs_arrownext > label.num0,
+                                                    .csslider1 > #cs_pause1_0:checked ~ .cs_arrownext > label.num0{opacity: 1; z-index: 5;}
+@-webkit-keyframes arrow1{0%, 33.32333333333334%{opacity: 1; z-index: 5;} 33.333333333333336%, 100%{opacity: 0; z-index: -1;}} 
+@keyframes arrow1{0%, 33.32333333333334%{opacity: 1; z-index: 5;} 33.333333333333336%, 100%{opacity: 0; z-index: -1;}} 
+
+.csslider1 > #cs_play1:checked ~ .cs_arrowprev > label.num0, 
+.csslider1 > #cs_play1:checked ~ .cs_arrownext > label.num0{-webkit-animation: arrow1 8000ms infinite -2000ms; animation: arrow1 8000ms infinite -2000ms;}
+.csslider1 > .slide:checked ~ .cs_arrowprev > label, 
+.csslider1 > .slide:checked ~ .cs_arrownext > label, 
+.csslider1 > .pause:checked ~ .cs_arrowprev > label, 
+.csslider1 > .pause:checked ~ .cs_arrownext > label{-webkit-animation: none; animation: none;} 
+/* ------------- General Bullets ------------- */ 
+.csslider1 > .cs_bullets{position: absolute; left: 0; width: 100%; z-index: 6; font-size: 0; line-height: 8pt; text-align: center;} 
+.csslider1 > .cs_bullets > div{margin-left: -50%; width: 100%;} 
+.csslider1 > .cs_bullets > label{position: relative; display: inline-block; cursor: pointer;} 
+.csslider1 > .cs_bullets > label > .cs_thumb{visibility: hidden; position: absolute; opacity: 0; z-index: 1; line-height: 0; left: -42.5px; top: -48px;} 
+.csslider1 > .cs_bullets > label > .cs_thumb > img{max-width:100px;} 
+/* ------------- /General Bullets ------------- */ 
+ /* ------------- General Description ------------- */
+.csslider1 > .cs_description{z-index: 3;}
+.csslider1 > .cs_description a,
+.csslider1 > .cs_description a:visited,
+.csslider1 > .cs_description a:active{color: inherit;}
+.csslider1 > .cs_description a:hover{text-decoration: none;}
+.csslider1 > .cs_description > label{position: absolute; word-wrap: break-word; white-space: normal; text-align: left; max-width: 50%; left: 0;}
+.csslider1 > .cs_description > label > span{vertical-align: top;}
+.csslider1 > .cs_description > label span{display: inline-block;}
+/* ------------- /General Description ------------- */
+/* ------------- General Play Pause ------------- */
+.csslider1 > .cs_play_pause{position: absolute; top: 50%; left: 50%; z-index: 5;}
+.csslider1 > .cs_play_pause > label{position: absolute; cursor: pointer;}
+.csslider1 > #cs_play1:checked ~ .cs_play_pause > .cs_pause,
+.csslider1 > .slide:checked ~ .cs_play_pause > .cs_play,
+.csslider1 > .pause:checked ~ .cs_play_pause > .cs_play{display: block; z-index: 5;}
+.csslider1 > #cs_play1:checked ~ .cs_play_pause > .cs_play,
+.csslider1 > .slide:checked ~ .cs_play_pause > .cs_pause,
+.csslider1 > .pause:checked ~ .cs_play_pause > .cs_pause{display: none; z-index: -1;}
+@-webkit-keyframes pauseChange1{0%, 24.99%{opacity: 1; z-index: 5;} 25%, 100%{opacity: 0; z-index: -1;}}
+@keyframes pauseChange1{0%, 24.99%{opacity: 1; z-index: 5;} 25%, 100%{opacity: 0; z-index: -1;}}
+.csslider1 > #cs_play1:checked ~ .cs_play_pause > .cs_pause.num0{opacity: 0; z-index: -1; -webkit-animation: pauseChange1 8000ms infinite -2000ms; animation: pauseChange1 8000ms infinite -2000ms;}
+.csslider1 > .slide:checked ~ .cs_play_pause > .cs_pause,
+.csslider1 > .pause:checked ~ .cs_play_pause > .cs_pause{-webkit-animation: none; animation: none;}
+/* ------------- /General Play Pause ------------- */
+.csslider1 > ul{overflow: hidden;} .csslider1 > ul > .slide{position: absolute; left: 0; top: 0; display: inline-block; opacity: 0; z-index: 1; -webkit-transition: -webkit-transform 2000ms cubic-bezier(0.680, -0.550, 0.265, 1.550), opacity 2000ms cubic-bezier(0.680, -0.550, 0.265, 1.550); transition: -webkit-transform 2000ms cubic-bezier(0.680, -0.550, 0.265, 1.550), transform 2000ms cubic-bezier(0.680, -0.550, 0.265, 1.550), opacity 2000ms cubic-bezier(0.680, -0.550, 0.265, 1.550); -webkit-transform: translateY(-50%); transform: translateY(-50%);} 
+.csslider1 > #cs_slide1_0:checked ~ ul > .slide.num0, .csslider1 > #cs_pause1_0:checked ~ ul > .slide.num0{ opacity: 1; z-index: 2; -webkit-transform: translateY(0); transform: translateY(0);} 
+@-webkit-keyframes jump1{0%, 31.25%, 100%{opacity: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%); -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 6.25%, 25%{opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 0%, 24.999%{z-index: 2; -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 25.001%, 100%{z-index: 1;}} @keyframes jump1{0%, 31.25%, 100%{opacity: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%); -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 6.25%, 25%{opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 0%, 24.999%{z-index: 2; -webkit-animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);} 25.001%, 100%{z-index: 1;}} 
+.csslider1 > #cs_play1:checked ~ ul > .slide.num0{-webkit-animation: jump1 8000ms infinite -2000ms; animation: jump1 8000ms infinite -2000ms;}.csslider1 > #cs_play1:checked ~ ul > .slide, .csslider1 > .pause:checked ~ ul > .slide{-webkit-transition: none; transition: none;}
+/* ------------- Template Arrows ------------- */.csslider1 > .cs_arrowprev > label,.csslider1 > .cs_arrownext > label{overflow: hidden; width: 100%; height: 100%;}.csslider1 > .cs_arrowprev,.csslider1 > .cs_arrownext{width: 20%; height: 100%; top: 0;}.csslider1 > .cs_arrowprev{left: 0;}.csslider1 > .cs_arrownext{right: 0;}.csslider1 > .cs_arrowprev > label{right: 0;}.csslider1 > .cs_arrownext > label{left: 0;}.csslider1 > .cs_arrowprev > label span,.csslider1 > .cs_arrownext > label span{position: absolute; top: 0; left: 0; right: 0; bottom: 0; color:#FFFFFF; background: none; text-align: center; z-index: 2; -webkit-transition: 300ms background ease; transition: 300ms background ease;}.csslider1 > .cs_arrowprev:hover > label span,.csslider1 > .cs_arrownext:hover > label span{background: rgba(255,255,255,0.3);}.csslider1 > .cs_arrowprev > label span:before{content: '<';}.csslider1 > .cs_arrownext > label span:before{content: '>';}.csslider1 > .cs_arrowprev > label span:after,.csslider1 > .cs_arrownext > label span:after,.csslider1 > .cs_arrowprev > label span:before,.csslider1 > .cs_arrownext > label span:before{position: absolute; top: 50%; left: 0; right: 0; font: 24px "cs-ctrl-utter"; height: 24px; -webkit-transform: translateY(-50%); transform: translateY(-50%);}.csslider1 > .cs_arrowprev > label span:after,.csslider1 > .cs_arrownext > label span:after{margin-left: -8px;}.csslider1 > .cs_arrowprev > label span:before,.csslider1 > .cs_arrownext > label span:before{margin-left: 8px;}/* IE10+ hack */_:-ms-input-placeholder, :root .csslider1 > .cs_arrowprev > label span:after{line-height: 25px;}_:-ms-input-placeholder, :root .csslider1 > .cs_arrownext > label span:after{line-height: 25px;}.csslider1 > .cs_arrowprev img,.csslider1 > .cs_arrownext img{position: absolute; top: 0; opacity: 0; -webkit-transition: 300ms opacity ease, 300ms -webkit-transform ease; transition: 300ms opacity ease, 300ms transform ease;}.csslider1 > .cs_arrowprev img{left: 0; -webkit-transform: translateX(20%); transform: translateX(20%);}.csslider1 > .cs_arrownext img{right: 0; -webkit-transform: translateX(-20%); transform: translateX(-20%);}.csslider1 > .cs_arrowprev:hover img,.csslider1 > .cs_arrownext:hover img{opacity: 1; -webkit-transform: translateX(0); transform: translateX(0);}/* ------------- /Template Arrows ------------- */
+/* ------------- Template Bullets ------------- */
+.csslider1 > .cs_bullets{bottom: 0; width: auto; text-align: right; line-height: 1; max-width: 45%; right: 20%; margin-right: 30px; left: auto;}
+.csslider1 > .cs_bullets > label > .cs_thumb{margin-left: 3px; -webkit-transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275), visibility 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275); transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275), visibility 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);}
+.csslider1 > .cs_bullets > label:hover > .cs_thumb{visibility: visible; opacity: 1;}
+.csslider1 > .cs_bullets > label{padding: 15px; background: rgba(255,255,255,0.3); -webkit-transition: 300ms background ease; transition: 300ms background ease;}
+.csslider1 > .cs_bullets > label:hover{background: rgba(255,255,255,0.6);}
+.csslider1 > .cs_bullets > label:hover > .cs_point,
+.csslider1 > #cs_slide1_0:checked ~ .cs_bullets > label.num0, .csslider1 > #cs_pause1_0:checked ~ .cs_bullets > label.num0{background-color:#FFFFFF;}
+@keyframes bullet1{0%, 24.99%{background-color:#FFFFFF;} 25%, 100%{background: rgba(255,255,255,0.3);}}
+@-webkit-keyframes bullet1{0%, 24.99%{background-color:#FFFFFF;} 25%, 100%{background: rgba(255,255,255,0.3);}}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label.num0, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label.num0{-webkit-animation: bullet1 8000ms infinite -2000ms; animation: bullet1 8000ms infinite -2000ms;}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label,
+.csslider1 > .pause:checked ~ .cs_bullets > label{-webkit-transition: none; transition: none;}
+.csslider1 > .slide:checked ~ .cs_bullets > label,
+.csslider1 > .pause:checked ~ .cs_bullets > label{-webkit-animation: none; animation: none;}
+/* ------------- /Template Bullets ------------- */
+@media only screen and (max-width: 480px), only screen and (-webkit-max-device-pixel-ratio: 2) and (max-width: 480px), only screen and ( max--moz-device-pixel-ratio: 2) and (max-width: 480px), only screen and ( -o-max-device-pixel-ratio: 2/1) and (max-width: 480px), only screen and ( max-device-pixel-ratio: 2) and (max-width: 480px), only screen and ( max-resolution: 192dpi) and (max-width: 480px), only screen and ( max-resolution: 2dppx) and (max-width: 480px){.csslider1 > .cs_description, .csslider1 > .cs_bullets{display: none;}}
+#paseo{display:none}
+                            #patemplatebackup{display:black}
+                            .patemplate_content_left{display:none!important;}
+                            #patemplate_store_category{display:none!important;}
+                            .patemplate_header_logo{display:none!important;}
+                            .patemplate_content_right .patemplatebox_h1{background-repeat:repeat-x!important}
+                            .patemplate_content_right{margin-left:0;}

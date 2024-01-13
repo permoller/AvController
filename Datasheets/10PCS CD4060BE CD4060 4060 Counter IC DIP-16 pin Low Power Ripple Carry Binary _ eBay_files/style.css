@@ -1,0 +1,181 @@
+ @font-face {
+     font-family: 'KievitBold';
+     src: url('KievitOffc-Bold.ttf') format('embedded-opentype'),
+}
+@font-face {
+     font-family: 'Kievit';
+     src: url('KievitOffc.ttf') format('embedded-opentype'),
+}
+    
+    #frame {
+     width: 300px;
+     height: 250px;
+     z-index: 0;
+     position: absolute;
+     border: 1px solid #cc0001;
+     box-sizing: border-box;
+     background-color: #ec0000;
+}
+ #titles {
+     z-index: 8889999;
+     position: absolute;
+}
+ #title1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'KievitBold', Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 900;
+    font-size: 23px;
+    animation: ShowMeMyText 1s 1 forwards;
+    /* text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000; */
+}
+ #title2 {
+     display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    font-family: 'Kievit', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 22px;
+    /* text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000; */
+     display: none;
+
+}
+ #title3 {
+     display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    font-family: 'Kievit', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 22px;
+    /* text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000; */
+    display: none;
+
+    }
+    
+ #backgroundImage {
+     position: absolute;
+     z-index: 5555;
+     left: 9px;
+     top: 9px;
+}
+ #Legal_text_p {
+     display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    width: 282px;
+    margin-left: 8px;
+    z-index: 99999999999;
+    margin-top: 171px;
+    color: white;
+    font-family: 'Kievit', Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    text-align: center;
+    text-shadow: -6px 1px 16px #85858500, 1px -1px 0 #0000, -1px 1px 0 #0000, 1px 1px 0 #0000007d;
+}
+ #logo {
+/*width: 130.15px; */
+    max-width: 91px;
+    /* height: 57.95px; */
+    size: 100px;
+    z-index: 0;
+    top: 214px;
+    left: 27px;
+    position: absolute;
+
+}
+ #button_draw {
+    left: 181px;
+    top: 218px;
+    height: 24px;
+    position: absolute;
+    background-color: #027234;
+    border-radius: 5px;
+    width: 107px;
+    opacity: 0;
+    z-index: 8888;
+    -webkit-box-shadow: -3px -9px 50px -8px rgba(0,0,0,0.42);
+    -moz-box-shadow: -3px -9px 50px -8px rgba(0,0,0,0.42);
+    box-shadow: -3px -9px 50px -8px rgba(0,0,0,0.42);
+    animation: ShowMeMyText 2s 1 forwards;
+    animation-delay: 1s;
+    display: table;
+}
+ #Buy_Button_Text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Kievit', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 100;
+    color: white;
+    text-transform: uppercase;
+}
+ #gradiant {
+     width: 159px;
+     height: 193px;
+     top: 244px;
+     z-index: 9999999;
+     left: 9.5px;
+     position: absolute;
+}
+ #blackGrad{
+    background-color: #4b3030;
+    opacity: 0.5;
+    width: 300px;
+    height: 200px;
+    top: 9px;
+    left: 9px;
+    position: absolute;
+    z-index: 99999;
+
+}
+ .frame {
+     border: 1px solid #cc0001;
+     width: 300px;
+     height: 250px;
+}
+ @keyframes ShowMeMyText{
+     from {
+         opacity: 0;
+    }
+     to {
+         opacity: 1;
+    }
+}
+ 
+
+#TitleCenter {
+      width: 289px;
+    position: relative;
+    height: 7%;
+    /*border: 1px solid blue;*/
+    display: table;
+    top: 15px;
+}
+#TitleCenter2 {
+    width: 289px;
+    position: absolute;
+    height: 62px;
+    /* border: 1px solid blue; */
+    display: table;
+    top: 55px;
+}
+#TitleCenter3 {
+    width: 289px;
+    position: absolute;
+    height: 62px;
+    /* border: 1px solid blue; */
+    display: table;
+    top: 55px;
+}
+
+#legalCenter {
+
+} 

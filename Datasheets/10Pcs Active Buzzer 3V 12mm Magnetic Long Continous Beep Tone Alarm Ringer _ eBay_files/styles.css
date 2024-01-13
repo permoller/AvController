@@ -1,0 +1,161 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing:	antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #fff;
+}
+
+.click {
+	cursor:pointer;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.image {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+#banner {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #000;
+	border: 1px solid #000000;
+}
+
+#main-click {
+	top: 0px;
+	left: 0px;
+}
+
+#hbo_logo {
+	width: 70px;
+	height: 51px;
+
+	left: 639px;
+	top: 19px;
+}
+
+#bg {
+	background-image: url("assets/castlerock_bg_728x90.jpg");
+	left: 0px;
+	top: 0px;
+
+	will-change: transform;
+}
+
+#tt_1 {
+	width: 219px;
+	height: 41px;
+
+	left: 13px;
+	top: 30px;
+
+	background-image: url(assets/castlerock_tt_1_728x90.png);
+
+	webkitFilter: "brightness(1)";
+	filter: brightness(1);
+	-webkit-filter: brightness(1);
+	/*overflow: hidden;*/
+	/*background-position: top center;*/
+
+
+	-webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
+	-webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
+
+}
+
+
+#tt_2 {
+	width: 155px;
+	height: 9px;
+
+	left: 45px;
+	top: 17px;
+
+	background-image: url(assets/castlerock_tt_2_728x90.png);
+
+	webkitFilter: "brightness(1)";
+	filter: brightness(1);
+	-webkit-filter: brightness(1);
+	/*overflow: hidden;*/
+	/*background-position: top center;*/
+}
+
+#txt {
+	width: 192px;
+	height: 12px;
+
+	left: 416px;
+	top: 18px;
+
+	background-image: url(assets/castlerock_txt_728x90.png);
+
+	overflow: hidden;
+}
+
+.cta-width {
+	width: 175px;
+	height: 36px;
+}
+
+#cta {
+
+	left: 424px;
+	top: 39px;
+	overflow: hidden;
+}
+
+#cta-bg {
+	background-color: #b57476;
+	
+	webkitFilter: "brightness(1)";
+	filter: brightness(1);
+	-webkit-filter: brightness(1);
+}
+
+.cta-text {
+	display: table;
+}
+
+.cta-text p {
+	display: table-cell; 
+  	vertical-align: middle; 
+	font-size: 10px;
+	font-weight: 700;
+	color:#fff;
+	text-align: center;
+}
+
+#cta-sign-up {
+	top: -100%;
+}
+
+
+#loadCurtain {
+	top: 0;
+	left: 0;
+	
+	background-color: #000;
+}
+
+#legal {
+	width: 220px;
+	height: 7px;
+
+	right: 5px;
+	bottom: 3px;
+
+	opacity: 0.8;
+
+	font-family: Arial, "sans-serif";
+	font-size: 7px;
+	line-height: 1em;
+	color: #6e6e6e;
+	text-align: right;
+}

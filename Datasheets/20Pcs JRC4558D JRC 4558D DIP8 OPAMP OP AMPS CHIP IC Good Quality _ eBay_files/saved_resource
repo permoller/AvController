@@ -1,0 +1,9 @@
+Adform=window.Adform||{};
+Adform.host="https://track.adform.net";
+Adform.shost="https://s1.adform.net";
+Adform.scriptBase=Adform.shost+"/banners/scripts/";
+Adform.cache="620";
+Adform.ADFBannerData={"URL":"https://track.adform.net/adfserve/?bn=13876504;rtbwp=0.133891;rtbdata=1qUQ94U7VOdNWNmXQt6ZrO1zCUWqYw7_ijuXBkmej6P5DgjNZk0C4JI2tMNSygQpl2vwwcK_8PppSetWkNVq-4X87KjeGYcmdsGyA8hS29h3iB1B5YFFM8HGzwnKHDdgewYvLs_EkRMuzQSvIXRE3rrT2Or-JjZfYd0zEUNrswVWdPn5yFf5ZxbXwW_Lzg5_Vjm2stVDoYkBmlXSR-OcXLu_o8G4E2BjCUv6o2d7QZj2hguw1axDAfKHm1yJW5yrcCA67z6uSgdEqD9wFQoynaij_St4-ZgYTV89CR5W8tsxHRdai5I-m6P0WlP_hjpKJSA8m0zgDmtRjNPLFGBWhWT0lQkXAT8x0","CREFURL":"https%3a%2f%2ftpc.googlesyndication.com%2fsafeframe%2f1-0-36%2fhtml%2fcontainer.html","BN":13876504};
+if(!Adform.ADFBannerParams)Adform.ADFBannerParams=[];
+Adform.ADFBannerParams.push(Adform.ADFBannerData);
+typeof Adform.ADFUtilInstance=="undefined"?document.write('<scr'+'ipt type="text/javascript" src="https://s1.adform.net/stoat/620/s1.adform.net/bootstrap.js"></scr'+'ipt>'):new Adform.ADFBanner();

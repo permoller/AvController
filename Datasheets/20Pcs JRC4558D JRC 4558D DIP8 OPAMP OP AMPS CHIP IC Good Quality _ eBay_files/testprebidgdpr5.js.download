@@ -1,0 +1,167 @@
+/**
+ * Built based on the snippet from http://prebid.org/dev-docs/modules/consentManagement.html#publishers-not-using-an-iab-compliant-cmp
+ * and  https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/CMP%20JS%20API%20v1.1%20Final.md#API-provided
+ */
+
+var _cobj =  window.cobj;
+var iabConsentData;  // build the IAB consent string
+var gdprApplies;     // true if gdpr Applies to the user, else false
+var hasGlobalScope = false;  // true if consent data was retrieved globally
+var responseCode;    // false if there was an error, else true
+var cmpLoaded;       // true if iabConsentData was loaded and processed
+var scandalData={};
+var scandalVendorIds;
+var purposeConsents;
+var vendorListVersion; //going to match it against "consentStringVersion"
+(function(window, document) {
+
+    function addFrame() {
+        if (window.frames['__cmpLocator'])
+            return;
+        if ( document.body ) {
+            var body = document.body,
+              iframe = document.createElement('iframe');
+            iframe.name = '__cmpLocator';
+            iframe.style.display = 'none';
+            body.appendChild(iframe);
+        } else {
+            setTimeout(addFrame, 5);
+        }
+    }
+    addFrame();
+
+    function cmpMsgHandler(event) {
+        try {
+            var json = event.data;
+            var msgIsString = typeof json === "string";
+            if ( msgIsString ) {
+                json = JSON.parse(json);
+            }
+            var call = json.__cmpCall;
+            if (call) {
+                window.__cmp(call.command, call.parameter, function(retValue, success) {
+                    var returnMsg = {
+                        __cmpReturn: {
+                            returnValue: retValue, success: success, callId: call.callId
+                        }
+                    };
+                    event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, '*');
+                });
+            }
+        } catch (e) {}  // do nothing
+    }
+
+    var cmpFunc = function(command, version, callback) {
+        var vendorConsentsObj;
+
+        if(isDefined(_cobj) && isDefined(_cobj.isGDPR) && isDefined(_cobj.cs) && (typeof callback == 'function')) {
+            cmpLoaded = true;
+            responseCode = true;
+            gdprApplies = _cobj.isGDPR;
+            /* Not doing vendor info
+            try {
+                scandalData = JSON.parse(_cobj.co);
+                scandalVendorIds = scandalData.selectedVendorIds;
+                var scandalPurposeConsents = scandalData.selectedPurposeIds;
+                purposeConsents = buildAllConsents(scandalPurposeConsents);
+                vendorListVersion = scandalData.vendorListVersion;
+                vendorConsentsObj = buildVendorConsentsObj();
+            } catch (e) {
+            }
+            */
+			//edit DN, iabConsentData should just be the consent string, not an object with other attributes
+            //iabConsentData = {};
+            iabConsentData = _cobj.cs;
+            //iabConsentData.gdprApplies = gdprApplies;
+            //iabConsentData.hasGlobalScope = hasGlobalScope;
+			
+        } else {
+            cmpLoaded = false;
+            responseCode = false;
+        }
+
+        if (command === 'ping') {
+            console.log("CMP: {gdprAppliesGlobally: " + hasGlobalScope + ", cmpLoaded:" +  cmpLoaded + "}");
+            callback({gdprAppliesGlobally: hasGlobalScope, cmpLoaded: cmpLoaded}, responseCode);
+        } else if (command === 'getConsentData') {
+            if(isNullOrEmpty(version)  || version == vendorListVersion) {
+                console.log("CMP: {consentData: " + iabConsentData + " gdprApplies: " + gdprApplies + " hasGlobalScope: " + hasGlobalScope + "}");
+                callback({consentData: iabConsentData, gdprApplies: gdprApplies, hasGlobalScope: hasGlobalScope}, responseCode);
+            } else {
+                callback({consentData: null, gdprApplies: gdprApplies, hasGlobalScope: hasGlobalScope}, responseCode);
+            }
+        } else if (command === 'getVendorConsents') {
+            if(isDefined(_cobj)) {
+                console.log("CMP: {metaData: " + _cobj.cs + " gdprApplies: " + gdprApplies + " hasGlobalScope: " + hasGlobalScope + "}");
+                callback({metadata: _cobj.cs, vendorConsents: undefined, gdprApplies: gdprApplies, hasGlobalScope: hasGlobalScope, purposeConsents: undefined}, responseCode);
+            }
+            /*
+            if(vendorConsentsObj) {
+                var vendorConsents;
+                if(isNullOrEmpty(version)) {
+                    vendorConsents = buildAllConsents(scandalVendorIds);
+                } else {
+                    vendorConsents = buildRequestedVendorConsents(version,scandalVendorIds);
+                }
+                vendorConsentsObj.vendorConsents = vendorConsents;
+            }
+            if(!isNullOrEmpty(vendorConsentsObj)) {
+              callback({metadata: vendorConsentsObj.metadata, vendorConsents: vendorConsentsObj.vendorConsents, gdprApplies: vendorConsentsObj.gdprApplies, hasGlobalScope: vendorConsentsObj.hasGlobalScope, purposeConsents: vendorConsentsObj.purposeConsents}, responseCode);
+            } else {
+              callback(undefined, false);
+            }
+            */
+        } else {
+            callback(undefined, false);
+        }
+    };
+
+    function buildAllConsents(arrayToIterate) {
+        var consents = {};
+        for (var i = 0; i < arrayToIterate.length; i++) {
+            consents[arrayToIterate[i].toString()] = true;
+        }
+        return consents;
+    }
+
+    function buildRequestedVendorConsents(requestedVendorIds, selectedVendorIds) {
+        var vendorConsents = {};
+        for(var i = 0; i < requestedVendorIds.length; i++) {
+            var currVendorId =  requestedVendorIds[i];
+            for(var j = 0; j < selectedVendorIds.length; j ++ ) {
+                if (selectedVendorIds[j] == currVendorId) {
+                    vendorConsents[selectedVendorIds[j].toString()] = true;
+                    break;
+                }
+            }
+        }
+        return vendorConsents
+    }
+
+    function buildVendorConsentsObj () {
+        var vendorConsentsObj = {};
+        vendorConsentsObj.metadata = _cobj.cs;
+        vendorConsentsObj.gdprApplies = gdprApplies;
+        vendorConsentsObj.hasGlobalScope = hasGlobalScope;
+        vendorConsentsObj.purposeConsents = purposeConsents;
+        return vendorConsentsObj;
+    }
+
+    function isNullOrEmpty(s) {
+        return(typeof(s) === 'undefined' || s === null || s === "");
+    }
+
+    function isDefined(s) {
+        return(!(typeof(s) === 'undefined' || s === null));
+    }
+
+    if ( typeof (__cmp) !== 'function' ) {
+        window.__cmp = cmpFunc;
+        window.__cmp.msgHandler = cmpMsgHandler;
+        if ( window.addEventListener ) {
+            window.addEventListener('message', cmpMsgHandler, false);
+        } else {
+            window.attachEvent('onmessage', cmpMsgHandler);
+        }
+    }
+})(window, document);

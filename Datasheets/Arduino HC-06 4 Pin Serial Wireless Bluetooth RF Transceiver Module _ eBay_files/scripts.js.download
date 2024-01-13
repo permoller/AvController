@@ -1,0 +1,67 @@
+init = function(){
+   setTimeout(function(){
+	   allAnimations();
+
+   }, 10);
+}
+
+function allAnimations() {
+
+    var animCount = 0;
+    var animTimer = setInterval(function(){ theTimer() }, 100),
+	
+		pic2 = document.getElementById('pic2'),
+		pic2a = document.getElementById('pic2a'),
+		roomba = document.getElementById('roomba-main'),
+		brush = document.getElementById('roomba-brush'),
+		roombaEnd = document.getElementById('roomba-end'),
+		logo = document.getElementById('logo'),		
+
+		copy1 = document.getElementById('copy1'),
+		copy_end = document.getElementById('copy_end'),
+		
+		shine = document.getElementById('shine'),		
+		whiteBg = document.getElementById('whiteBg'),
+		whiteBlock = document.getElementById('whiteBlock'),        
+		circleR = document.getElementById('circleR'),
+		obot = document.getElementById('obot'),			
+		endFrame = document.getElementById('endFrame'),
+		lockup = document.getElementById('lockup'),
+        cta = document.getElementById('cta');	
+		bgExit = document.getElementById('discover_button');			
+		hoverActive = false;
+
+	//  timings
+
+	function theTimer(){
+		if(animCount == 0){
+			brush.setAttribute('class', 'fade-in brush');
+			logo.setAttribute('class', 'transition-2 fade-in');	
+		} else if(animCount == 2){
+			roomba.setAttribute('class', 'transition-10 romba_end');	
+		} else if(animCount == 5){
+			copy1.setAttribute('class', 'transition-11 fade-in');
+		} else if(animCount == 16){	
+			pic2.setAttribute('class', 'fade-in pic2a_half transition-6 pic2_open');						
+        } else if(animCount == 55){
+			roombaEnd.setAttribute('class', 'transition-11 fade-in');
+			whiteBlock.setAttribute('class', 'fade-in');
+			endFrame.setAttribute('class', 'fade-in'); 
+			copy_end.setAttribute('class', 'transition-2 fade-in copy1_move'); 			
+			cta.setAttribute('class', 'transition-2 fade-in');
+			lockup.setAttribute('class', 'transition-2 fade-in');
+        } else if(animCount == 61){  
+			 circleR.setAttribute('class', 'transition-1 fade-in scale-in');
+			 brush.classList.remove("brush");							
+        } else if(animCount == 67){   	
+			obot.setAttribute('class', 'transition-1 fade-in');
+        } else if(animCount == 69){			
+			shine.setAttribute('class', 'transition-2 move');
+		} else if(animCount == 180){
+            clearInterval(animTimer);
+		} animCount++;
+	}	
+	
+	
+}
+

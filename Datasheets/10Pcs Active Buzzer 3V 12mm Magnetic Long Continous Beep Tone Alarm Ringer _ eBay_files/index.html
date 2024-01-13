@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://s0.2mdn.net/8278829/1571735924696/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="ad.size" content="width=728, height=90">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>CPHD</title>
+		<script type="text/javascript">
+		var adServer = "dcm";
+		// adServer Keys: adform, dcm, adwords
+
+		if(adServer==="dcm") {var clickTag = "https://www.google.com";}
+	</script>
+		<style>
+		html, body{ margin: 0; padding: 0; }
+		html { box-sizing: border-box; }
+		*, *:before, *:after { box-sizing: inherit; }
+		.size { width: 728px; height: 90px; }
+		</style>
+		<link rel="stylesheet" type="text/css" href="./styles.css">
+		<link href="./css" rel="stylesheet">
+	<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script><script type="text/javascript" src="./tweenmax_1.20.0_d360d9a082ccc13b1a1a9b153f86b378_min.js.download"></script><script type="text/javascript" src="./script.js.download"></script><script type="text/javascript" src="./CustomEase.min.js.download"></script></head> 
+	<body>
+		<div id="banner" class="size absolute" style="opacity: 1; display: block;">
+			<div id="bg" class="absolute image size" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale(1, 1);"></div>
+			<div id="tt_1" class="absolute image" style="opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); filter: brightness(1.07981);"></div>
+			<div id="tt_2" class="absolute image" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+			<div id="hbo_logo" class="absolute"><svg xmlns="https://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 690.1 505.4"><path fill="#FFF" d="M673.3 472.1l-1.2 1.2c-10.1 9.9-20.1 16.5-36 16.5-24.1 0-42.9-20.6-42.9-47v-.3c0-26.6 18.4-46.6 42.9-46.6 13.2 0 23.7 4.7 35 15.7l1.2 1.2 11.1-12.2-1.2-1.1a60.9 60.9 0 0 0-46-19.1 58.2 58.2 0 0 0-43 18.5 64 64 0 0 0-16.8 44.1v.3c0 16.9 6 32.6 16.9 44.1a57.6 57.6 0 0 0 42.5 18.1 61.2 61.2 0 0 0 47.2-21.2l1.1-1.2-10.8-11zM531.5 382.3h16.3v121.1h-16.3zM440.1 382.3h-41.6v121.1h41.6c36.4 0 62.8-25.5 62.8-60.6v-.3c0-34.9-26.4-60.2-62.8-60.2zm46 60.5v.3c0 26.3-18.9 44.6-46 44.6h-25.3v-89.9h25.3c27.1.1 46 18.6 46 45zM340.7 454.7c18.9-4.4 30-17.5 30-35.4v-.3c0-9.6-3.3-18.2-9.4-24.4a46.7 46.7 0 0 0-33.9-12.3h-51.2v121.1h16.3v-45.8H323l33.4 45.8h20.1l-35.8-48.7zm-48.1-56.8h33.8c17.6 0 27.8 7.9 27.8 21.6v.3c0 13.7-11 22.6-27.9 22.6h-33.7v-44.5zM248.9 442.1c-.1-16.4-6-31.7-16.6-43.1a58.6 58.6 0 0 0-43.6-18.6 59 59 0 0 0-43.8 18.8 64 64 0 0 0-16.7 43.8v.3c0 16.6 5.9 32 16.6 43.6 11.1 12 26.6 18.6 43.6 18.6s32.6-6.7 43.8-18.8a64 64 0 0 0 16.7-44.6zm-16.8.7v.3c0 26.6-18.7 46.6-43.4 46.6-24.9 0-43.7-20.2-43.7-47v-.3c0-26.6 18.7-46.6 43.4-46.6 24.9.1 43.7 20.3 43.7 47zM84.8 382.3v91.1l-70.1-91.1H.1v121.1h16v-93.3l71.8 93.3h12.8V382.3zM0 332.9h683.4v6.7H0zM674 35.8a11.3 11.3 0 0 1-7.6-3.2 11 11 0 0 1-3-7.6v-.1c0-1.5.3-2.9.8-4.2a11.6 11.6 0 0 1 5.7-5.8c1.3-.6 2.7-.9 4.2-.9s2.9.3 4.2.9c1.3.6 2.4 1.3 3.4 2.3a11 11 0 0 1 3 7.6v.1a10.2 10.2 0 0 1-3.1 7.6c-1 1-2.1 1.8-3.4 2.4-1.3.6-2.7.9-4.2.9m0-1.1a10 10 0 0 0 3.8-.8 8.1 8.1 0 0 0 3-2.1 9.9 9.9 0 0 0 2.7-6.9v-.1c0-1.3-.3-2.6-.7-3.8a9.2 9.2 0 0 0-2-3.1 9.6 9.6 0 0 0-10.6-2.1 8.1 8.1 0 0 0-3 2.1 9.9 9.9 0 0 0-2.7 6.9v.2a9.9 9.9 0 0 0 2.7 6.9c.8.9 1.8 1.6 3 2.1 1.2.4 2.4.7 3.8.7m-4.3-15.8h5c1.4 0 2.6.4 3.4 1.2.6.6.9 1.4.9 2.4v.1c0 .9-.2 1.7-.7 2.2-.5.6-1.1 1-1.9 1.2l3 4.3h-2.5l-2.7-3.9h-2.4v3.9h-2.1V18.9zm4.9 5.6c.7 0 1.2-.2 1.6-.5.4-.3.6-.7.6-1.3v-.1c0-.6-.2-1-.6-1.3-.4-.3-.9-.5-1.6-.5h-2.8v3.6h2.8zM202.5 289.5h-75.6V179h-49v110.5H.3L0 4.8h77.9v105.9H127V4.8h75.6v284.7zm346.3 1.3c77.9 0 141.4-66.3 141.3-146.1C690.1 63.3 626.7.1 548.8 0 471-.1 431.2 58.6 421.4 82.2c.1-35.5-34.1-77.5-74.2-77.5h-129v284.7h120.2c48.5 0 83-43 83-79.8 11.2 23.2 49.5 81.3 127.4 81.2M328.4 175c11.1 0 19.9 11.2 19.9 24.1 0 12.8-8.8 24.1-19.9 24.1h-38.2V175h38.2zm.1-106.9c11.1 0 19.9 11.2 19.9 24.1 0 12.8-8.8 24.1-19.9 24.1h-38.2V68.1h38.2zm50.9 76.7c8.8-1.1 23.4-11.4 28.5-17.9-1.8 8.1-2 31.6.2 39.7-5.9-9.2-19.8-20.6-28.7-21.8m98.6 0c0-40 31.7-72.5 70.8-72.5s70.8 32.4 70.8 72.5c0 40-31.7 72.5-70.8 72.5S478 184.9 478 144.8m70.8 57a56.4 56.4 0 0 0 55.7-57c0-31.5-24.9-57-55.7-57a56.4 56.4 0 0 0-55.7 57c.1 31.5 25 57 55.7 57"></path></svg></div>
+			<div id="txt" class="absolute image" style="opacity: 1;"></div>
+			<div id="cta" class="absolute cta-width" style="opacity: 1;">
+				<div id="cta-bg" class="cta-width absolute"></div>
+				<div id="cta-one-month" class="cta-text cta-width absolute"><p>2-WEEK FREE TRIAL</p></div>
+				<div id="cta-sign-up" class="cta-text cta-width absolute"><p>SIGN UP NOW</p></div>
+			</div>
+			<div id="legal" class="absolute">© Warner Bros. Entertainment Inc.</div>
+			<div id="fade" class="absolute size"></div>	
+			<div id="main-click" class="size absolute click"><!--Blank DIV to capture the main exit--></div>
+			<div id="loadCurtain" class="absolute size" style="display: none;"></div>
+		</div>
+	
+	<script language="javascript">
+
+		var hboLogoSvg = '<svg xmlns="https://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 690.1 505.4"><path fill="#FFF" d="M673.3 472.1l-1.2 1.2c-10.1 9.9-20.1 16.5-36 16.5-24.1 0-42.9-20.6-42.9-47v-.3c0-26.6 18.4-46.6 42.9-46.6 13.2 0 23.7 4.7 35 15.7l1.2 1.2 11.1-12.2-1.2-1.1a60.9 60.9 0 0 0-46-19.1 58.2 58.2 0 0 0-43 18.5 64 64 0 0 0-16.8 44.1v.3c0 16.9 6 32.6 16.9 44.1a57.6 57.6 0 0 0 42.5 18.1 61.2 61.2 0 0 0 47.2-21.2l1.1-1.2-10.8-11zM531.5 382.3h16.3v121.1h-16.3zM440.1 382.3h-41.6v121.1h41.6c36.4 0 62.8-25.5 62.8-60.6v-.3c0-34.9-26.4-60.2-62.8-60.2zm46 60.5v.3c0 26.3-18.9 44.6-46 44.6h-25.3v-89.9h25.3c27.1.1 46 18.6 46 45zM340.7 454.7c18.9-4.4 30-17.5 30-35.4v-.3c0-9.6-3.3-18.2-9.4-24.4a46.7 46.7 0 0 0-33.9-12.3h-51.2v121.1h16.3v-45.8H323l33.4 45.8h20.1l-35.8-48.7zm-48.1-56.8h33.8c17.6 0 27.8 7.9 27.8 21.6v.3c0 13.7-11 22.6-27.9 22.6h-33.7v-44.5zM248.9 442.1c-.1-16.4-6-31.7-16.6-43.1a58.6 58.6 0 0 0-43.6-18.6 59 59 0 0 0-43.8 18.8 64 64 0 0 0-16.7 43.8v.3c0 16.6 5.9 32 16.6 43.6 11.1 12 26.6 18.6 43.6 18.6s32.6-6.7 43.8-18.8a64 64 0 0 0 16.7-44.6zm-16.8.7v.3c0 26.6-18.7 46.6-43.4 46.6-24.9 0-43.7-20.2-43.7-47v-.3c0-26.6 18.7-46.6 43.4-46.6 24.9.1 43.7 20.3 43.7 47zM84.8 382.3v91.1l-70.1-91.1H.1v121.1h16v-93.3l71.8 93.3h12.8V382.3zM0 332.9h683.4v6.7H0zM674 35.8a11.3 11.3 0 0 1-7.6-3.2 11 11 0 0 1-3-7.6v-.1c0-1.5.3-2.9.8-4.2a11.6 11.6 0 0 1 5.7-5.8c1.3-.6 2.7-.9 4.2-.9s2.9.3 4.2.9c1.3.6 2.4 1.3 3.4 2.3a11 11 0 0 1 3 7.6v.1a10.2 10.2 0 0 1-3.1 7.6c-1 1-2.1 1.8-3.4 2.4-1.3.6-2.7.9-4.2.9m0-1.1a10 10 0 0 0 3.8-.8 8.1 8.1 0 0 0 3-2.1 9.9 9.9 0 0 0 2.7-6.9v-.1c0-1.3-.3-2.6-.7-3.8a9.2 9.2 0 0 0-2-3.1 9.6 9.6 0 0 0-10.6-2.1 8.1 8.1 0 0 0-3 2.1 9.9 9.9 0 0 0-2.7 6.9v.2a9.9 9.9 0 0 0 2.7 6.9c.8.9 1.8 1.6 3 2.1 1.2.4 2.4.7 3.8.7m-4.3-15.8h5c1.4 0 2.6.4 3.4 1.2.6.6.9 1.4.9 2.4v.1c0 .9-.2 1.7-.7 2.2-.5.6-1.1 1-1.9 1.2l3 4.3h-2.5l-2.7-3.9h-2.4v3.9h-2.1V18.9zm4.9 5.6c.7 0 1.2-.2 1.6-.5.4-.3.6-.7.6-1.3v-.1c0-.6-.2-1-.6-1.3-.4-.3-.9-.5-1.6-.5h-2.8v3.6h2.8zM202.5 289.5h-75.6V179h-49v110.5H.3L0 4.8h77.9v105.9H127V4.8h75.6v284.7zm346.3 1.3c77.9 0 141.4-66.3 141.3-146.1C690.1 63.3 626.7.1 548.8 0 471-.1 431.2 58.6 421.4 82.2c.1-35.5-34.1-77.5-74.2-77.5h-129v284.7h120.2c48.5 0 83-43 83-79.8 11.2 23.2 49.5 81.3 127.4 81.2M328.4 175c11.1 0 19.9 11.2 19.9 24.1 0 12.8-8.8 24.1-19.9 24.1h-38.2V175h38.2zm.1-106.9c11.1 0 19.9 11.2 19.9 24.1 0 12.8-8.8 24.1-19.9 24.1h-38.2V68.1h38.2zm50.9 76.7c8.8-1.1 23.4-11.4 28.5-17.9-1.8 8.1-2 31.6.2 39.7-5.9-9.2-19.8-20.6-28.7-21.8m98.6 0c0-40 31.7-72.5 70.8-72.5s70.8 32.4 70.8 72.5c0 40-31.7 72.5-70.8 72.5S478 184.9 478 144.8m70.8 57a56.4 56.4 0 0 0 55.7-57c0-31.5-24.9-57-55.7-57a56.4 56.4 0 0 0-55.7 57c.1 31.5 25 57 55.7 57"/></svg>';
+
+		document.getElementById("hbo_logo").innerHTML = hboLogoSvg;
+
+	</script>
+	<script type="text/javascript">
+		(function(window,document,undefined){
+			function loadScript(url, callback){
+				var script = document.createElement("script")
+				script.type = "text/javascript";
+
+				if (script.readyState){  //IE
+					script.onreadystatechange = function(){
+						if (script.readyState == "loaded" || script.readyState == "complete"){
+							script.onreadystatechange = null;
+							callback();
+						}
+					};
+				} else {  //Others
+					script.onload = function(){
+						callback();
+					};
+				}
+
+				script.src = url;
+				document.getElementsByTagName("head")[0].appendChild(script);
+			}
+
+			function politeLoad(urls, onComplete) {
+				var l = urls.length,
+						loaded = 0,
+						checkProgress = function() {
+							if (++loaded === l && onComplete) {
+								onComplete();
+							}
+						},
+						i;
+				for (i = 0; i < l; i++) {
+					loadScript(urls[i], checkProgress);
+				}
+			}
+			function politeInit(){
+				politeLoad(['https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.20.0_d360d9a082ccc13b1a1a9b153f86b378_min.js',
+					'script.js', 'CustomEase.min.js'], function() {
+					Banner.init(adServer);
+					//Clear the load wheel here
+					document.getElementById("banner").style.display = "block";
+				});
+			}
+
+			politeInit();
+
+		})(this,document);
+	</script>
+ 
+</body></html>
