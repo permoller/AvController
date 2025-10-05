@@ -26,10 +26,10 @@ void enterNextMode(Mode currentMode, Mode nextMode) {
       if(!tvModeAutoChanged) {
         sendTvCmd(TvCmd_Power);
         // wait for the tv to be ready to change channel
-        delay(8000);
+        // delay(8000);
         // change channel to the most used channel for the children so they don't have to change the channel manually
-        sendTvCmd(TvCmd_1);
-        sendTvCmd(TvCmd_0);
+        // sendTvCmd(TvCmd_1);
+        // sendTvCmd(TvCmd_0);
       }
       break;
     case Mode_Projector_Chromecast:
