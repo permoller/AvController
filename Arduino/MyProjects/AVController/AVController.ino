@@ -1,3 +1,4 @@
+
 #include <IRLibRecvPCI.h>
 #include <IRLibDecodeBase.h>
 #include <IRLibSendBase.h>
@@ -5,7 +6,6 @@
 #include <IRLib_P04_rc6.h>
 #include <IRLib_P13_DenonAvr1912.h>
 #include <IRLibCombo.h>
-#include <Time.h>
 #include <TimeLib.h>
 #include <DS1302RTC.h>
 
@@ -14,7 +14,7 @@
 #define debugButtonNo
 #define debugTvNo
 #define debugAmpNo
-#define debugProjector
+#define debugProjectorNo
 #define debugProjectorScreenNo
 // if the arduino keeps beeping after boot try to debug the Realtime Clock
 #define debugRtcNo
@@ -174,34 +174,34 @@ void setup() {
 }
 
 Mode _currentMode = Mode_Off;
+Mode _nextMode = Mode_Off;
 time_t _currentModeEnteredTime = 0;
 void loop() {
   tvModeAutoChanged = false;
   updateCurrentTime();
-  Mode nextMode = handleIr(_currentMode);
-  if(_currentMode == nextMode)
-    nextMode = handleButtons(_currentMode);
-  if(_currentMode == nextMode)
-    nextMode = handleTvUsbPower(_currentMode, _currentModeEnteredTime);
-  if(_currentMode == nextMode)
-    nextMode = handleMotion(_currentMode);
-  if(_currentMode == nextMode)
-    nextMode = handleTimer(_currentMode, _currentModeEnteredTime);
+  if(_currentMode == _nextMode)
+    _nextMode = handleIr(_currentMode);
+  if(_currentMode == _nextMode)
+    _nextMode = handleButtons(_currentMode);
+  if(_currentMode == _nextMode)
+    _nextMode = handleTvUsbPower(_currentMode, _currentModeEnteredTime);
+  //if(_currentMode == _nextMode)
+  //  _nextMode = handleMotion(_currentMode);
+  if(_currentMode == _nextMode)
+    _nextMode = handleTimer(_currentMode, _currentModeEnteredTime);
 
-  if(_currentMode != nextMode) {
+  if(_currentMode != _nextMode) {
     updateLeds(Mode_Off);
-    leaveCurrentMode(_currentMode, nextMode);
-    updatePowerOutlets(nextMode);
-    enterNextMode(_currentMode, nextMode);
-  }
-  updateLeds(nextMode);
-
-if(_currentMode != nextMode) {
+    leaveCurrentMode(_currentMode, _nextMode);
+    updatePowerOutlets(_nextMode);
+    enterNextMode(_currentMode, _nextMode);
 #ifdef debugMode
-    p("Mode changed from "); p(Mode_Names[_currentMode]); p(" to "); pl(Mode_Names[nextMode]);
+    p("Mode changed from "); p(Mode_Names[_currentMode]); p(" to "); pl(Mode_Names[_nextMode]);
 #endif
     _currentModeEnteredTime = currentTime;
-    _currentMode = nextMode;
+    _currentMode = _nextMode;
   }
+  updateLeds(_nextMode);
+
 }
 

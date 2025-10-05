@@ -2,8 +2,8 @@
 // Examples are while the tv is booting after getting power and and for a while after turning the tv off
 // So we also look at the total current being drawn to guess if the tv is on or off
 time_t _powerCheckPreviousTime = 0;
-Mode handleTvUsbPower(Mode currentMode, time_t currentModeEnteredTime) {
 
+Mode handleTvUsbPower(Mode currentMode, time_t currentModeEnteredTime) {
   tvModeAutoChanged = false;
   
   // we only care about the tv-state if we expect it to be in a given state (Mode_Tv or Mode_Standby)
@@ -13,17 +13,17 @@ Mode handleTvUsbPower(Mode currentMode, time_t currentModeEnteredTime) {
   
   _powerCheckPreviousTime = currentTime;
   
-  // if we are in standby, but the tv is outputting power on the USB port and we are using more power than normal standby-power (25-45)
+  // if we are in standby, but the tv is outputting power on the USB port and we are using more power than normal standby-power (5-10)
   // the tv must have been turned on
-  if(currentMode == Mode_Standby && doesTvOutputPowerOnUsb(false) && readCurrentSensor() > 80) {
+  if(currentMode == Mode_Standby && doesTvOutputPowerOnUsb(false) && readCurrentSensor() > 15) {
 #ifdef debugTvUsbPower
     pl("Changing mode to TV");
 #endif
     tvModeAutoChanged = true;
     return Mode_Tv;
 
-  // if we are in tv-mode but the tv is off (no usb power or lower power usage than normal tv mode power (110-140)) we change mode to standby
-  } else if(currentMode == Mode_Tv && (!doesTvOutputPowerOnUsb(true) || readCurrentSensor() < 70)) {
+  // if we are in tv-mode but the tv is off (no usb power or lower power usage than normal tv mode power (25-40)) we change mode to standby
+  } else if(currentMode == Mode_Tv && (!doesTvOutputPowerOnUsb(true) || readCurrentSensor() < 13)) {
 #ifdef debugTvUsbPower
     pl("Changing mode to Standby");
 #endif

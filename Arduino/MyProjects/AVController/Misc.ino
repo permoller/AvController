@@ -25,20 +25,35 @@ void fatalError() {
 }
 
 int readCurrentSensor() {
-  int minValue = 1024, maxValue = 0, value;
-  
-  for(int i=0; i<400; i++)
+  int minValue, maxValue, value;
+  int sampleSum = 0;
+  int sampleCount = 3;
+  uint32_t start = micros();
+  uint32_t periodMicros = 20000; // 1 period at 50 hz
+  int counter = 0;
+
+  for(int i = 0; i < sampleCount; i++)
   {
-    value = analogRead(currentSensorPin);
-    if(value < minValue)
-      minValue = value;
-    if(value > maxValue)
-      maxValue = value;
+    minValue = maxValue = value = (analogRead(currentSensorPin) + analogRead(currentSensorPin) + analogRead(currentSensorPin))/3;
+    counter += 3;
+    while (micros() - start < periodMicros)
+    {
+      value = (analogRead(currentSensorPin) + analogRead(currentSensorPin) + analogRead(currentSensorPin))/3;
+      counter += 3;
+      if(value < minValue)
+        minValue = value;
+      if(value > maxValue)
+        maxValue = value;
+    }
+    value = maxValue - minValue;
+    sampleSum += value;
   }
-  value = maxValue - minValue;
+  value = sampleSum / sampleCount;
 #ifdef debugCurrentSensor
     p("Current sensor: ");
     pl(value);
+    p("Measurements: ");
+    pl(counter);
 #endif
   return value;
 }
