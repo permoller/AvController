@@ -21,7 +21,7 @@ void initTime() {
     enterNewTime = true;
   } else {
     t = RTC.get();
-    if (year(t) < 2018 || year(t) > 2028) {
+    if (year(t) < 2018 || year(t) > 2030) {
 #ifdef debugRtc
       p("Time out of range: ");
       p(t);
@@ -103,24 +103,26 @@ int read2digits(const char *s, int min, int max) {
 bool isLocalDaylightSavingsTime(time_t t) {
   tmElements_t tmStart, tmEnd;
   time_t tStart, tEnd;
+  int calendarStartYear = 2025;
+  int calendarEndYear = 2035;
   int y = year(t);
-  if (y < 2018 || y > 2028)
+  if (y < calendarStartYear || y > calendarEndYear)
   {
     fatalError();
   }
-  // days for the years 2018 to 2028
-  int startDays[] = { 25, 31, 29, 28, 27, 26, 31, 30, 29, 28, 26 };
-  int endDays[] =   { 28, 27, 25, 31, 30, 29, 27, 26, 25, 31, 29 };
+  // day in month for daylight savings period for the years from calendarStartYear to calendarEndYear
+  int startDays[] = { 30, 29, 28, 26, 25, 31, 30, 28, 27, 26, 25 };
+  int endDays[] =   { 26, 26, 31, 29, 28, 27, 26, 31, 30, 29, 28 };
   tmStart.Year = CalendarYrToTm(y);
   tmStart.Month = 3;
-  tmStart.Day = startDays[y - 2018];
+  tmStart.Day = startDays[y - calendarStartYear];
   tmStart.Hour = 2;
   tmStart.Minute = 0;
   tmStart.Second = 0;
 
   tmEnd.Year = CalendarYrToTm(y);
   tmEnd.Month = 10;
-  tmEnd.Day = endDays[y - 2018];
+  tmEnd.Day = endDays[y - calendarStartYear];
   tmEnd.Hour = 2;
   tmEnd.Minute = 0;
   tmEnd.Second = 0;

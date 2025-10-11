@@ -3,7 +3,7 @@
 #include <IRLibDecodeBase.h>
 #include <IRLibSendBase.h>
 #include <IRLib_P01_NEC.h>
-#include <IRLib_P04_rc6.h>
+#include <IRLib_P04_RC6.h>
 #include <IRLib_P13_DenonAvr1912.h>
 #include <IRLibCombo.h>
 #include <TimeLib.h>
@@ -187,8 +187,8 @@ void loop() {
     _nextMode = handleTvUsbPower(_currentMode, _currentModeEnteredTime);
   //if(_currentMode == _nextMode)
   //  _nextMode = handleMotion(_currentMode);
-  if(_currentMode == _nextMode)
-    _nextMode = handleTimer(_currentMode, _currentModeEnteredTime);
+  //if(_currentMode == _nextMode)
+  //  _nextMode = handleTimer(_currentMode, _currentModeEnteredTime);
 
   if(_currentMode != _nextMode) {
     updateLeds(Mode_Off);
@@ -204,4 +204,3 @@ void loop() {
   updateLeds(_nextMode);
 
 }
-
